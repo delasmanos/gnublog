@@ -1,0 +1,50 @@
+---
+import { getEntry } from "astro:content";
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
+// Example: Instead of creating an `img` tag,
+// apply an optimized image to a div using CSS.
+import bg from "-assets/images/gnu.jpg";
+import { getImage } from "astro:assets";
+// import placeHolderHero from "-assets/images/blog-generic-placeholder.jpg";
+
+const optimizedBackgroundImage = await getImage({ src: bg });
+const settings = await getEntry("settings", "variables");
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <body
+    style={{ "background-image": `url('${optimizedBackgroundImage.src}')` }}
+    class:list={[
+      // `bg-[url('${optimizedBackgroundImage.src}')]`,
+      `bg-[url('/_image?href=%2F%40fs%2Fopt%2Fgnuband%2Fsrc%2Fassets%2Fimages%2Fgnu.jpg%3ForigWidth%3D960%26origHeight%3D1568%26origFormat%3Djpg&f=webp')]`,
+      "bg-fix bg-auto bg-cover bg-center bg-no-repeat",
+      "h-screen",
+      // "bg-slate-500",
+    ]}
+  >
+    <Header title={settings.data.siteName} isHome={true} />
+    <main
+      class="flex h-full items-center justify-center"
+      transition:name="content"
+      transition:animate="slide"
+    >
+      <h1>WE ARE GNU!</h1>
+    </main>
+    <style>
+      h1 {
+        font-family: sans-serif;
+        text-transform: uppercase;
+        font-weight: 700;
+        color: white;
+        font-size: 5rem;
+        text-shadow: 10px 0px #ff4400;
+      }
+    </style>
+  </body>
+</html>

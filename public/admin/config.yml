@@ -1,0 +1,46 @@
+backend:
+  name: github
+  api_root: https://api.github.com
+  repo: delasmanos/astro-cms-starter #replace with your githu repo
+  branch: main
+  squash_merges: true
+  open_authoring: true
+
+publish_mode: editorial_workflow
+media_folder: public/images
+public_folder: /images
+site_url: "http://localhost:4321/" # your site name
+
+collections:
+  - name: post
+    label: Posts
+    folder: src/content/blog
+    create: true
+    extension: mdx
+    format: frontmatter
+    preview_path: blog/{{slug}}
+    fields:
+      - { name: title, label: Title }
+      - { name: description, label: Description }
+      - { name: publishedAt, label: Date, widget: date }
+      - { label: "Publish", name: "isPublish", widget: "boolean", default: true}
+      - { label: "Draft", name: "isDraft", widget: "boolean", default: false}
+      - { name: body, label: Body, widget: markdown }
+  
+  # Workaorund to show md and mdx files 
+  - name: blog
+    label: BlogMD
+    folder: src/content/blog
+    create: true
+    extension: md
+    format: frontmatter
+    preview_path: blog/{{slug}}
+    fields:
+      - { name: title, label: Title }
+      - { name: description, label: Description }
+      - { name: publishedAt, label: Date, widget: date }
+      - { label: "Publish", name: "isPublish", widget: "boolean", default: true}
+      - { label: "Draft", name: "isDraft", widget: "boolean", default: false}
+      - { name: body, label: Body, widget: markdown }
+
+

@@ -1,0 +1,30 @@
+[
+  {
+    "displayName":"HOME",
+    "path":"/"
+  },
+  {
+    "displayName":"ÜBER MICH",
+    "path":"/ueber-mich"
+  },
+  {
+    "displayName":"BEHANDLUNG",
+    "path":"/behandlung"
+  },
+  {
+    "displayName":"SELBSTHILFE",
+    "path":"/selbsthilfe"
+  },
+  {
+    "displayName":"PRAXIS",
+    "path":"/praxis"
+  },
+  {
+    "displayName":"KONTAKT",
+    "path":"/kontakt"
+  },
+  {
+    "displayName":"FAQ",
+    "path":"/faq"
+  }
+]
