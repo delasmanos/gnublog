@@ -1,14 +1,19 @@
 ---
 title: Markdown Test Page
-pubDate: 01 Dec 2021
-description: A sample page with the most common elements of an article, including headings, paragraphs, lists, and images. Use it as a starting point for applying your own styles.
-showToc: true
-heroImageAltText: sdsdf
+description: Just so you know how to use Markdown
+pubDate: NOV 2 2023
 heroImage: "./chaos-rehearsal-1.jpg"
+heroImageAltText: some image
+showHeadingPermalink: true
+showToc: true
+author: delasmanos
+tags: article
 
 ---
+this image will be optimized by astro because it is located inside of `src`.
+[more info](https://astro.build/blog/images/#automatic-markdown--mdx-support)
 
-![Illustration of what my head looks like from the inside](/images/a2cb01b447e4b909caa67db43b574c0f.jpg)
+![placeholder alt text](../../assets/images/blog-placeholder-1.jpg)
 
 This page is an adapted version of [markdown-test-page](https://github.com/fullpipe/markdown-test-page). It should give you an idea of how different elements are styled on this template.
 
