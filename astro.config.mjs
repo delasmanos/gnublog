@@ -14,7 +14,7 @@ const summaryFn = str => `Open ${str}`;
 // https://astro.build/config
 export default defineConfig({
   site: 'https://delasmanos.github.io/',
-  base: import.meta.env.MODE === 'production' ? '/gnublog': '/',
+  ...(import.meta.env.MODE === 'production' && {base: '/gnublog'}),
   markdown: {
     remarkPlugins: [remarkUnwrapImages, remarkReadingTime, [collapsibleToc, {
       test: 'contents',
