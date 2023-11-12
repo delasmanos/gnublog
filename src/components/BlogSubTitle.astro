@@ -4,6 +4,8 @@ import type { ReadTimeResults } from "reading-time";
 import { slugify } from "~util/slugify";
 import FormattedDate from "./FormattedDate.astro";
 import type { CollectionEntry } from "astro:content";
+import Link from "./Link.astro";
+
 export type Props = {
   pubDate: Date;
   minutesToRead?: ReadTimeResults;
@@ -28,12 +30,12 @@ const { pubDate, updatedDate, writtenBy, minutesToRead } = Astro.props;
         writtenBy && (
           <>
             author:&nbsp;
-            <a
+            <Link
               class="text-gnutrast"
               href={`/band-mates/${slugify(writtenBy.data.name)}`}
             >
               {writtenBy.data.name}
-            </a>
+            </Link>
           </>
         )
       }
