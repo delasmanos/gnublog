@@ -3,6 +3,6 @@
 
 export const SITE_TITLE = "GNU.band";
 // needed to work on github pages
-export const LINK_PREFIX = import.meta.env.PUBLIC_BASE_PATH;
+export const LINK_PREFIX = import.meta.env.PUBLIC_BASE_PATH || "";
 //   import.meta.env.BASE_PATH === "production" ? "/gnublog" : "";
 export const SITE_DESCRIPTION = "We are GNU a band from Berlin";
