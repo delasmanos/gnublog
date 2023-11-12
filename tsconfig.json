@@ -1,15 +1,15 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "extends": "astro/tsconfigs/strictest",
+  "extends": "astro/tsconfigs/strict",
   "compilerOptions": {
     "strictNullChecks": true,
-    // "allowJs": true,
+    "allowJs": true,
     "baseUrl": "./src",
     "paths": {
-      "-util/*": [ "util/*"],
-      "-components/*": [ "components/*"],
-      "-content/*": [ "content/*"],
-      "-assets/*": [ "assets/*"]
+      "~util/*": [ "util/*"],
+      "~components/*": [ "components/*"],
+      "~content/*": [ "content/*"],
+      "~assets/*": [ "assets/*"]
     }
   }
 }
