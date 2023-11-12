@@ -13,7 +13,8 @@ const summaryFn = str => `Open ${str}`;
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://example.com',
+  site: 'https://delasmanos.github.io/',
+  base: '/gnublog',
   markdown: {
     remarkPlugins: [remarkUnwrapImages, remarkReadingTime, [collapsibleToc, {
       test: 'contents',
