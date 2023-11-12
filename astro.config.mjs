@@ -8,14 +8,16 @@ import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import { h, s } from 'hastscript';
 import { collapsibleToc } from "./src/server/remark-plugins/astro-collapsible-toc.mjs";
 import tailwind from "@astrojs/tailwind";
+import {loadEnv} from "vite"
+const {BASE_PATH} = loadEnv(process.env.BASE_PATH, process.cwd(),"");
+console.log(BASE_PATH);
 const summaryFn = str => `Open ${str}`;
-
 
 // https://astro.build/config
 export default defineConfig({
   site: 'https://delasmanos.github.io/',
   // ...(import.meta.env.MODE === 'production' && {base: '/gnublog'}),
-  base: '/gnublog',
+  base: BASE_PATH,
   markdown: {
     remarkPlugins: [remarkUnwrapImages, remarkReadingTime, [collapsibleToc, {
       test: 'contents',
