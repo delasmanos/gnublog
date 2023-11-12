@@ -5,10 +5,15 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import FormattedDate from "../components/FormattedDate.astro";
 import { Image } from "astro:assets";
+import { slugify } from "~util/slugify";
+import { ViewTransitions } from "astro:transitions";
+import ReadingTime from "~components/ReadingTime.astro";
+import type { ReadTimeResults } from "reading-time";
+import BlogSubTitle from "~components/BlogSubTitle.astro";
 
 type Props = CollectionEntry<"blog">["data"] & {
-  minutesToRead?: string;
-  writtenBy?: CollectionEntry<"band-mates">;
+  minutesToRead: ReadTimeResults;
+  writtenBy?: CollectionEntry<"band-mates"> | null;
 };
 
 const {
@@ -27,8 +32,9 @@ const {
 <html lang="en">
   <head>
     <BaseHead title={title} description={description} />
+    <ViewTransitions />
     <style>
-      main {
+      /* main {
         width: calc(100% - 2em);
         max-width: 100%;
         margin: 0;
@@ -64,7 +70,7 @@ const {
       }
       .last-updated-on {
         font-style: italic;
-      }
+      } */
       .no-showautolink :global(.autolinked-heading) {
         display: none !important;
       }
@@ -74,22 +80,33 @@ const {
       :global(.toc-details-collapse li a) {
         padding: 0.5rem;
       }
+      :global(a.autolinked-heading) {
+        text-decoration: none;
+      }
     </style>
   </head>
 
-  <body class="bg-gnutrast">
+  <body
+    class="h-full bg-gnutrast-light dark:bg-slate-600"
+    transition:animate="none"
+  >
     <Header classNames="text-transparent" />
     <main
       transition:animate="slide"
       transition:name="content"
-      class:list={[{ "no-showautolink": !showHeadingPermalink }]}
+      class:list={[
+        { "no-showautolink": !showHeadingPermalink },
+        "container mx-auto ",
+      ]}
     >
-      <article class="prose prose-h1:text-gnurange">
+      <article
+        class="prose prose-xl prose-zinc mx-auto max-w-4xl px-4 pt-20 dark:prose-invert md:prose-2xl prose-h1:text-gnurange"
+      >
         <div class="hero-image">
           {
             heroImage && (
               <Image
-                class="h-48 w-full object-cover"
+                class="h-48 w-full rounded-xl object-cover"
                 width={1020}
                 height={510}
                 src={heroImage}
@@ -98,27 +115,31 @@ const {
             )
           }
         </div>
-        <div class="prose">
-          <div class="title">
-            {writtenBy && writtenBy.data.name}
-            {minutesToRead}
-            <div class="date">
-              <FormattedDate date={pubDate} />
-              {
-                updatedDate && (
-                  <div class="last-updated-on">
-                    Last updated on <FormattedDate date={updatedDate} />
-                  </div>
-                )
-              }
+        <div class="">
+          <div class="">
+            <div class="flex flex-col">
+              <BlogSubTitle
+                pubDate={pubDate}
+                updatedDate={updatedDate}
+                writtenBy={writtenBy}
+                minutesToRead={minutesToRead}
+              />
+              <h1 class="mb-0">{title}</h1>
+              <hr class="not-prose mb-2 mt-0 border-t-gnurange" />
             </div>
-            <h1>{title}</h1>
-            <hr />
+            <slot />
           </div>
-          <slot />
         </div>
       </article>
     </main>
     <Footer />
+    <style>
+      /* :global(p:first-of-type::first-letter) {
+        float: left;
+        font-size: 4rem;
+        line-height: 4rem;
+        padding-right: 0.5rem;
+      } */
+    </style>
   </body>
 </html>

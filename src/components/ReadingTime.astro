@@ -1,0 +1,18 @@
+---
+import type { ReadTimeResults } from "reading-time";
+import { formatReadingTime } from "~util/reading-time-formatter";
+
+type Props = { readtimeObj: ReadTimeResults; prefix: string; suffix?: string };
+const { readtimeObj, prefix, suffix } = Astro.props;
+// const minutesToReadString = formatReadingTime({
+//   t: readtimeObj,
+//   prefix: prefix,
+//   suffix: suffix,
+// });
+const rounded = Math.round(readtimeObj.minutes);
+const suff = rounded < 2 ? "Minute" : "Minutes";
+---
+
+<div>
+  {prefix}&nbsp;{rounded}&nbsp;{suff}
+</div>

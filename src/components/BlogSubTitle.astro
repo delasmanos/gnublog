@@ -1,0 +1,47 @@
+---
+import ReadingTime from "./ReadingTime.astro";
+import type { ReadTimeResults } from "reading-time";
+import { slugify } from "~util/slugify";
+import FormattedDate from "./FormattedDate.astro";
+import type { CollectionEntry } from "astro:content";
+export type Props = {
+  pubDate: Date;
+  minutesToRead?: ReadTimeResults;
+  updatedDate?: Date;
+  writtenBy?: CollectionEntry<"band-mates"> | null;
+};
+const { pubDate, updatedDate, writtenBy, minutesToRead } = Astro.props;
+---
+
+<div class="subtitle flex flex-col">
+  <div class="flex">
+    <FormattedDate date={pubDate} />
+    {
+      updatedDate && (
+        <div class="last-updated-on">
+          Last updated on <FormattedDate date={updatedDate} />
+        </div>
+      )
+    }
+    <div class="ml-auto flex">
+      {
+        writtenBy && (
+          <>
+            author:&nbsp;
+            <a
+              class="text-gnutrast"
+              href={`/band-mates/${slugify(writtenBy.data.name)}`}
+            >
+              {writtenBy.data.name}
+            </a>
+          </>
+        )
+      }
+    </div>
+  </div>
+  {
+    minutesToRead && (
+      <ReadingTime readtimeObj={minutesToRead} prefix="Reading time: " />
+    )
+  }
+</div>
