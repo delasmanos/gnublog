@@ -8,6 +8,7 @@ showHeadingPermalink: true
 showToc: true
 author: delasmanos
 tags: article
+published: false
 
 ---
 this image will be optimized by astro because it is located inside of `src`.

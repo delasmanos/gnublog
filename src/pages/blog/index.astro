@@ -1,25 +1,28 @@
 ---
 import { Image } from "astro:assets";
-import { getCollection } from "astro:content";
 import DocumentLayout from "layouts/DocumentLayout.astro";
 import placeHolderHero from "~assets/images/blog-generic-placeholder.jpg";
 import FormattedDate from "~components/FormattedDate.astro";
 import Link from "~components/Link.astro";
+import { getPublishedPosts } from "~util/collection-helper";
 
-const posts = (await getCollection("blog")).sort(
-  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
-);
+const posts = await getPublishedPosts();
 ---
 
 <DocumentLayout title="Posts" description="A list of all blog posts">
-  <section class="flex h-full items-center justify-center px-4 pt-20">
-    <ul class="">
+  <section
+    class="mx-auto flex h-full w-full max-w-4xl items-center justify-center px-2 pt-20 md:px-4"
+  >
+    <ul class="flex w-full flex-wrap">
       {
-        posts.map((post) => (
-          <li class="text-slate-800 dark:text-slate-100">
-            <Link href={`/blog/${post.slug}/`}>
+        posts.map((post, i) => (
+          <li class="w-full text-slate-800 first:w-full dark:text-slate-100 md:w-1/2 md:p-4">
+            <Link
+              class="relative overflow-hidden "
+              href={`/blog/${post.slug}/`}
+            >
               <Image
-                class="h-[360px] object-cover"
+                class="h-[360px] w-full rounded-xl  object-cover drop-shadow-md"
                 width={720}
                 height={360}
                 src={post.data.heroImage ?? placeHolderHero}
@@ -38,7 +41,7 @@ const posts = (await getCollection("blog")).sort(
 </DocumentLayout>
 
 <style>
-  main {
+  /* main {
     width: 960px;
   }
   ul {
@@ -104,5 +107,5 @@ const posts = (await getCollection("blog")).sort(
     ul li:first-child .title {
       font-size: 1.563em;
     }
-  }
+  } */
 </style>

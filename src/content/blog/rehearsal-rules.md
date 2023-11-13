@@ -5,6 +5,7 @@ heroImage: "./chaos-rehearsal-3.jpg"
 heroImageAltText: sdsdf
 pubDate: Nov 11 2023
 author: delasmanos
+published: true
 ---
 
 You know how it is, you meet up for a rehearsal, chat first, build up slowly, one of you might even play a tune to check if he's "in tune"...
