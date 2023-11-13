@@ -8,8 +8,7 @@ import Link from "./Link.astro";
 
 type Props = HTMLAttributes<"a"> & { showUnderline?: boolean };
 
-const { href, class: className, showUnderline, ...props } = Astro.props;
-const decorate = typeof showUnderline === "undefined" ? true : showUnderline;
+const { href, class: className, showUnderline = true, ...props } = Astro.props;
 const { pathname } = Astro.url;
 const isRoot = href === "/";
 const isSub = !isRoot && pathname.includes(href?.toString() ?? "");
@@ -30,7 +29,7 @@ const isActive =
       "drop-shadow-md",
     ),
     { "font-bolder ": isActive },
-    { "underline underline-offset-4": decorate },
+    { "underline underline-offset-4": showUnderline },
     { "no-underline": !isActive || isRoot },
   ]}
 >
