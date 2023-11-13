@@ -1,4 +1,7 @@
 ---
+// disable typecheck because object destructering does not work properly in astro files
+// and typescript complains on spreading props into the link component
+// @ts-nocheck
 import type { HTMLAttributes } from "astro/types";
 import { twMerge } from "tailwind-merge";
 import Link from "./Link.astro";
@@ -18,6 +21,7 @@ const isActive =
 <Link
   href={href}
   style={{ "text-shadow": "2px 2px var(--chili-red)" }}
+  {...props}
   class:list={[
     twMerge(
       className,
@@ -29,7 +33,6 @@ const isActive =
     { "underline underline-offset-4": decorate },
     { "no-underline": !isActive || isRoot },
   ]}
-  {...props}
 >
   <slot />
 </Link>

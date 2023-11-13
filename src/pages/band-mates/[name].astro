@@ -21,7 +21,7 @@ const postsByAuthor = await getCollection("blog", (entry) =>
 );
 ---
 
-<DocumentLayout>
+<DocumentLayout title={`About ${a.data.name}`} description={`${a.data.aboutMe}`}>
   <div class="flex justify-center">
     <div class="px-16 py-20 md:px-6">
       <div class="mate-card relative">
