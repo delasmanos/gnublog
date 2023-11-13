@@ -1,5 +1,5 @@
 backend:
-  name: github
+  name: git-gateway
   api_root: https://api.github.com
   repo: delasmanos/gnublog #replace with your githu repo
   branch: main
@@ -57,19 +57,4 @@ collections:
       - { label: "avatar", name: "avatar" }
       - { label: "aboutMe", name: "About me" }
 
-  - name: navigation
-    label: navigation
-    widget: list
-    folder: src/content/navigation
-    create: true
-    extension: json
-    format: json
-    preview_path: navigation/{{id}}
-    fields:
-      - label: Route
-        name: route
-        widget: object
-        fields:
-          - { name: displayName, label: Display namme, widget: string }
-          - { name: path, label: path, widget: string }
-     
+  
