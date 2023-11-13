@@ -9,15 +9,16 @@ import { h, s } from 'hastscript';
 import { collapsibleToc } from "./src/server/remark-plugins/astro-collapsible-toc.mjs";
 import tailwind from "@astrojs/tailwind";
 import {loadEnv} from "vite"
-const {BASE_PATH} = loadEnv(process.env.BASE_PATH, process.cwd(),"");
-console.log(BASE_PATH);
+
+const { PUBLIC_BASE_PATH } = loadEnv(process.env.PUBLIC_BASE_PATH, process.cwd(),"");
+console.log('conf',PUBLIC_BASE_PATH);
+
 const summaryFn = str => `Open ${str}`;
 
 // https://astro.build/config
 export default defineConfig({
   site: 'https://delasmanos.github.io/',
-  // ...(import.meta.env.MODE === 'production' && {base: '/gnublog'}),
-  base: BASE_PATH,
+  base: PUBLIC_BASE_PATH,
   markdown: {
     remarkPlugins: [remarkUnwrapImages, remarkReadingTime, [collapsibleToc, {
       test: 'contents',

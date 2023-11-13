@@ -4,8 +4,9 @@ import type { HTMLAttributes } from "astro/types";
 import { LINK_PREFIX } from "consts";
 export type Props = HTMLAttributes<"a"> & AstroBuiltinAttributes;
 const { href, ...rest } = Astro.props;
-const augHref = `${LINK_PREFIX}${href}`;
-console.log("augHref", augHref);
+const base = import.meta.env.BASE_URL;
+const augHref = `${base === "/" ? "" : base}${href}`;
+console.log("augHref", augHref, base);
 ---
 
 <a href={augHref} {...rest}><slot /></a>
