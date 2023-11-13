@@ -8,6 +8,7 @@ import {
 export const postSchema = ({ image }: SchemaContext) =>
   z.object({
     title: z.string(),
+    subTitle: z.string().optional(),
     description: z.string(),
     // Transform string to Date object
     pubDate: z.coerce.date(),
