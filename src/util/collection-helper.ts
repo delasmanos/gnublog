@@ -13,8 +13,7 @@ export const getPublishedPosts: GetPublishedPostFn = async (
       if (filter) {
         return p.data.published && filter(p);
       }
-      return true;
-      //   return p.data.published;
+      return p.data.published;
     })
   ).sort((a, b) =>
     sortByDate === "latest-first"
