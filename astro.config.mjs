@@ -11,7 +11,7 @@ import tailwind from "@astrojs/tailwind";
 import {loadEnv} from "vite"
 
 const { PUBLIC_BASE_PATH } = loadEnv(process.env.PUBLIC_BASE_PATH, process.cwd(),"");
-console.log('conf',PUBLIC_BASE_PATH);
+console.log('astro.config basepath: ',PUBLIC_BASE_PATH);
 
 const summaryFn = str => `Open ${str}`;
 
