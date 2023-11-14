@@ -1,0 +1,92 @@
+---
+import "../styles/global.css";
+import { Image } from "astro:assets";
+import notFoundImg from "../assets/images/404gnu.png";
+import Link from "~components/Link.astro";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>404: Not Found</title>
+    <style>
+      :root {
+        --gray-10: hsl(258, 7%, 10%);
+        --gray-20: hsl(258, 7%, 20%);
+        --gray-30: hsl(258, 7%, 30%);
+        --gray-40: hsl(258, 7%, 40%);
+        --gray-50: hsl(258, 7%, 50%);
+        --gray-60: hsl(258, 7%, 60%);
+        --gray-70: hsl(258, 7%, 70%);
+        --gray-80: hsl(258, 7%, 80%);
+        --gray-90: hsl(258, 7%, 90%);
+        --black: #13151a;
+        --accent-light: #e0ccfa;
+      }
+
+      body {
+        background-color: var(--gray-10);
+        line-height: 1.5;
+        margin: 0;
+        height: 100vh;
+      }
+
+      h1 {
+        margin-bottom: 8px;
+        color: white;
+        font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
+          "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+        font-weight: 700;
+        margin-top: 0.1rem;
+        margin-bottom: 0;
+      }
+      .statusCode {
+        color: var(--accent-light);
+      }
+      .back {
+        max-height: 10vh;
+        color: white;
+        font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
+          "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+      }
+      .overlay {
+        padding: 0.1rem 0.5rem;
+        color: var(--gray-10);
+        background: white;
+        opacity: 0.8;
+        position: absolute;
+        border-radius: 1rem;
+        top: 5%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    </style>
+  </head>
+  <body>
+    <main
+      style={{ maxWidth: "400px" }}
+      class="mx-auto flex h-full flex-col items-center justify-center"
+    >
+      <Link
+        class="group block"
+        style={{
+          position: "relative",
+          textAlign: "center",
+        }}
+        href="/"
+      >
+        <p class="overlay">back to home</p>
+        <Image
+          class="outline-4 outline-blue-600 grayscale group-hover:scale-75"
+          src={notFoundImg}
+          alt="404 page not found"
+        />
+      </Link>
+      <h1>
+        <span class="statusCode">404:&nbsp;</span>
+        <span class="statusMessage">Uh Oh Page Not found</span>
+      </h1>
+    </main>
+  </body>
+</html>
