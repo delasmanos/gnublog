@@ -8,7 +8,11 @@
     "path":"/blog"
   },
   {
-    "displayName":"member",
+    "displayName":"we",
     "path":"/band-mates"
+  }, 
+  {
+    "displayName":"merch",
+    "path":"/merch"
   }
 ]
