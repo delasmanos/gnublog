@@ -9,6 +9,7 @@ import { h, s } from 'hastscript';
 import { collapsibleToc } from "./src/server/remark-plugins/astro-collapsible-toc.mjs";
 import tailwind from "@astrojs/tailwind";
 import {loadEnv} from "vite"
+import { PERMALINK_CLASSNAME, TOC_DETAILS_CLASSNAME } from "./src/server/remark-plugins/consts"
 
 const { PUBLIC_BASE_PATH } = loadEnv(process.env.PUBLIC_BASE_PATH, process.cwd(),"");
 console.log('astro.config basepath: ',PUBLIC_BASE_PATH);
@@ -23,13 +24,13 @@ export default defineConfig({
     remarkPlugins: [remarkUnwrapImages, remarkReadingTime, [collapsibleToc, {
       test: 'contents',
       summary: summaryFn,
-      detailsClassname: 'toc-details-collapse',
+      detailsClassname: TOC_DETAILS_CLASSNAME,
       remarkTocOptions: {}
     }]],
     rehypePlugins: [rehypeHeadingIds, [rehypeAutolinkHeadings, {
       behavior: 'append',
       properties: {
-        class: 'autolinked-heading'
+        class: PERMALINK_CLASSNAME
       },
       content: [h('span.visually-hidden', ' permalink'), s('span.icon-link-value', ' 🔗')]
     }]]

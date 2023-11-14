@@ -8,6 +8,7 @@ import BaseHead from "../components/BaseHead.astro";
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
 import BlogHeading from "~components/BlogHeading.astro";
+import MdContainer from "~components/MdContainer.astro";
 
 type Props = CollectionEntry<"blog">["data"] & {
   minutesToRead: ReadTimeResults;
@@ -70,17 +71,11 @@ const {
       .last-updated-on {
         font-style: italic;
       } */
-      .no-showautolink :global(.autolinked-heading) {
-        display: none !important;
-      }
       :global(.toc-details-collapse, .toc-details-collapse li) {
         list-style-type: none;
       }
       :global(.toc-details-collapse li a) {
         padding: 0.5rem;
-      }
-      :global(a.autolinked-heading) {
-        text-decoration: none;
       }
     </style>
   </head>
@@ -94,12 +89,13 @@ const {
       transition:animate="slide"
       transition:name="content"
       class:list={[
-        { "no-showautolink": !showHeadingPermalink },
+        // { "no-permalink": !showHeadingPermalink },
         "container mx-auto ",
       ]}
     >
-      <article
-        class="prose-h1:text-gnudark prose prose-sm prose-zinc mx-auto max-w-4xl px-4 pt-20 dark:prose-invert md:prose-xl prose-h1:mb-0 dark:prose-h1:text-gnurange"
+      <MdContainer
+        showHeadingPermalink={showHeadingPermalink}
+        class="prose prose-sm prose-zinc mx-auto max-w-4xl px-4 pt-20 dark:prose-invert md:prose-xl prose-h1:mb-0 prose-h1:text-gnudark dark:prose-h1:text-gnurange"
       >
         <div class="hero-image">
           {
@@ -130,7 +126,7 @@ const {
           <hr class="not-prose mb-2 mt-0 border-t-gnurange" />
           <slot />
         </div>
-      </article>
+      </MdContainer>
       <Footer />
       <style>
         /* :global(p:first-of-type::first-letter) {

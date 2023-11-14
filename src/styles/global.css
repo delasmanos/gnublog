@@ -30,3 +30,12 @@
 	white-space: nowrap;
 	word-wrap: normal;
 }
+
+@layer utilities {
+	.gnu-shadow {
+		font-family: sans-serif;
+		text-transform: uppercase;
+		font-weight: 700;
+		text-shadow: .1em 0.1em var(--chili-red);
+	}
+}
