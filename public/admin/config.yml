@@ -1,7 +1,7 @@
 backend:
   name: git-gateway
   api_root: https://api.github.com
-  repo: delasmanos/gnublog #replace with your githu repo
+  repo: delasmanos/gnublog
   branch: main
   squash_merges: true
   open_authoring: true
@@ -9,11 +9,11 @@ backend:
 publish_mode: editorial_workflow
 media_folder: public/images
 public_folder: /images
-site_url: "https://delasmanos.github.io/gnublog/" # your site name
+site_url: "https://delasmanos.github.io/gnublog/"
 
 collections:
-  - name: post
-    label: Posts
+  - name: blog
+    label: Articles
     folder: src/content/blog
     create: true
     extension: mdx
@@ -21,40 +21,28 @@ collections:
     preview_path: blog/{{slug}}
     fields:
       - { name: title, label: Title }
+      - { name: subTitle, label: Subtitle }
       - { name: description, label: Description }
-      - { name: publishedAt, label: Date, widget: date }
-      - { label: "Publish", name: "isPublish", widget: "boolean", default: true}
-      - { label: "Draft", name: "isDraft", widget: "boolean", default: false}
-      - { name: body, label: Body, widget: markdown }
-  
-  # Workaorund to show md and mdx files 
-  - name: blog
-    label: BlogMD
-    folder: src/content/blog
-    create: true
-    extension: md
-    format: frontmatter
-    preview_path: blog/{{slug}}
-    fields:
-      - { name: title, label: Title }
-      - { name: description, label: Description }
-      - { name: publishedAt, label: Date, widget: date }
-      - { label: "Publish", name: "isPublish", widget: "boolean", default: true}
-      - { label: "Draft", name: "isDraft", widget: "boolean", default: false}
-      - { name: body, label: Body, widget: markdown }
+      - { name: pubDate, label: Date, widget: datetime, date_format: "YYYY-MM-DD" }
+      - { name: heroImage, label: Hero image, widget: image, allow_multiple: false,media_folder: './'  }
+      - { name: heroImageAltText, label: Hero image alt text }
+      - { name: showHeadingPermalink, label: Show Permalinks in headings, widget: "boolean" }
+      - { name: showToc, label: Show Table of contents, widget: "boolean" }
+      - { name: author, label: Written by denio,benno,daniel or christoph?,  widget: "string" }
+      - { name: tags, label: Tags one of "article" "music-production" "coding",  widget: "string" }
+      - { name: published, label: Mark as published,  widget: "boolean" }
 
   - name: band-mates
     label: bandmates
     folder: src/content/band-mates
     create: true
-    extension: json
-    format: json
+    extension: md
+    format: frontmatter
     preview_path: band-mates/{{id}}
     fields:
-      - { name: name, label: Name }
-      - { name: nickName, label: Nickname }
-      - { name: postion, label: postion }
-      - { label: "avatar", name: "avatar" }
-      - { label: "aboutMe", name: "About me" }
+      - { name: name, label: Name, widget: "string" }
+      - { name: nickName, label: Nickname, widget: "string" }
+      - { name: postion, label: postion, widget: "string" }
+      - { name: avatar, label: Avatar, widget: image, allow_multiple: false, media_folder: './'  }
 
   
