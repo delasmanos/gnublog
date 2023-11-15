@@ -1,85 +1,267 @@
 ---
 import Link from "~components/Link.astro";
-type Props = {
-  length: number;
-  currentUrl: string;
-  currentPage: number;
-  firstUrl: string;
-  prevUrl: string;
-  nextUrl: string;
-  lastUrl: string;
-};
-const { length, currentUrl, currentPage, firstUrl, prevUrl, nextUrl, lastUrl } =
-  Astro.props;
-const paginationList = Array.from({ length: length }, (_, i) => i + 1);
+// Pagination Props type helpers
+export type NumericalString = `${number}`;
+export type RouteString = string | null | undefined;
+
+interface Props {
+  firstPage?: RouteString;
+  previousPage?: RouteString;
+  nextPage?: RouteString;
+  lastPage?: RouteString;
+  currentPage?: string | number;
+  totalPages?: NumericalString | number;
+}
+
+const {
+  firstPage = "#",
+  previousPage = "#",
+  nextPage = "#",
+  lastPage = "#",
+  currentPage = "1",
+  totalPages = "12",
+} = Astro.props;
 ---
 
-<nav
-  aria-label="Blog pages"
-  class="pagination pagination-default flex space-x-4 bg-white"
->
-  {
-    firstUrl == currentUrl ? (
-      <span class="pagination__link disabled">
-        <i class="pi-angle-left" />
-        <i class="pi-angle-left" />
-      </span>
-    ) : (
-      <Link href={firstUrl} class="pagination__link">
-        <i class="pi-angle-left" />
-        <i class="pi-angle-left" />
-      </Link>
-    )
-  }
-
-  {
-    prevUrl ? (
-      <Link href={prevUrl} class="pagination__link">
-        <i class="pi-angle-left" />
-      </Link>
-    ) : (
-      <span class="pagination__link disabled">
-        <i class="pi-angle-left" />
-      </span>
-    )
-  }
-
-  {
-    paginationList.map((num) => (
-      <Link
-        href={`${firstUrl}${num == 1 ? "" : "/" + num}`}
-        class={`pagination__link ${
-          currentPage == num ? "disabled active" : ""
-        }`}
-      >
-        {num}
-      </Link>
-    ))
-  }
-
-  {
-    !nextUrl ? (
-      <span class="pagination__link disabled">
-        <i class="pi-angle-right" />
-      </span>
-    ) : (
-      <Link href={nextUrl} class="pagination__link">
-        <i class="pi-angle-right" />
-      </Link>
-    )
-  }
-
-  {
-    lastUrl == currentUrl ? (
-      <span class="pagination__link disabled">
-        <i class="pi-angle-right" />
-        <i class="pi-angle-right" />
-      </span>
-    ) : (
-      <Link href={lastUrl} class="pagination__link">
-        <i class="pi-angle-right" />
-        <i class="pi-angle-right" />
-      </Link>
-    )
-  }
+<nav class="pagination" aria-label="Pagination">
+  <ul class="pagination__list">
+    <li>
+      {
+        firstPage ? (
+          <Link href={firstPage} aria-label="Go to the first page">
+            <svg
+              aria-hidden="true"
+              width="32"
+              height="32"
+              viewBox="0 0 32 32"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M24.6667 9L18 15.6667L24.6667 22.3333"
+                stroke="currentColor"
+                stroke-width="2.66667"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M14.6667 9L8 15.6667L14.6667 22.3333"
+                stroke="currentColor"
+                stroke-width="2.66667"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </Link>
+        ) : (
+          <span class="disabled">
+            <svg
+              aria-hidden="true"
+              width="32"
+              height="32"
+              viewBox="0 0 32 32"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M24.6667 9L18 15.6667L24.6667 22.3333"
+                stroke="currentColor"
+                stroke-width="2.66667"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M14.6667 9L8 15.6667L14.6667 22.3333"
+                stroke="currentColor"
+                stroke-width="2.66667"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </span>
+        )
+      }
+    </li>
+    <li>
+      {
+        previousPage ? (
+          <Link href={previousPage} aria-label={`Go back to ${previousPage}`}>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+              width="32"
+              height="32"
+              viewBox="0 0 24 24"
+            >
+              <path
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="m14 7-5 5 5 5"
+              />
+            </svg>
+          </Link>
+        ) : (
+          <span class="disabled">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+              width="32"
+              height="32"
+              viewBox="0 0 24 24"
+            >
+              <path
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="m14 7-5 5 5 5"
+              />
+            </svg>
+          </span>
+        )
+      }
+    </li>
+    <li>
+      <span>Page {currentPage} of {totalPages}</span>
+    </li>
+    <li>
+      {
+        nextPage ? (
+          <Link href={nextPage} aria-label={`Go to ${nextPage}`}>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+              width="32"
+              height="32"
+              viewBox="0 0 24 24"
+            >
+              <path
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="m10 7 5 5-5 5"
+              />
+            </svg>
+          </Link>
+        ) : (
+          <span class="disabled">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+              width="32"
+              height="32"
+              viewBox="0 0 24 24"
+            >
+              <path
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="m10 7 5 5-5 5"
+              />
+            </svg>
+          </span>
+        )
+      }
+    </li>
+    <li>
+      {
+        lastPage ? (
+          <Link href={lastPage} aria-label="Go to the last page">
+            <svg
+              aria-hidden="true"
+              width="32"
+              height="32"
+              viewBox="0 0 32 32"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M7.33333 9L14 15.6667L7.33333 22.3333"
+                stroke="currentColor"
+                stroke-width="2.66667"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M17.3333 9L24 15.6667L17.3333 22.3333"
+                stroke="currentColor"
+                stroke-width="2.66667"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </Link>
+        ) : (
+          <span class="disabled">
+            <svg
+              aria-hidden="true"
+              width="32"
+              height="32"
+              viewBox="0 0 32 32"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M7.33333 9L14 15.6667L7.33333 22.3333"
+                stroke="currentColor"
+                stroke-width="2.66667"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M17.3333 9L24 15.6667L17.3333 22.3333"
+                stroke="currentColor"
+                stroke-width="2.66667"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </span>
+        )
+      }
+    </li>
+  </ul>
 </nav>
+
+<style is:global>
+  .pagination .pagination__list {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .pagination a,
+  .pagination .disabled {
+    display: block;
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 3px;
+  }
+
+  .pagination a {
+    border-color: currentColor;
+    transition: background-color 0.15s ease-in-out;
+  }
+
+  .pagination a:hover,
+  .pagination a:focus-visible {
+    background-color: orange;
+  }
+
+  .pagination a:focus-visible svg path {
+    stroke: #222;
+  }
+
+  .pagination .disabled {
+    border-color: grey;
+    opacity: 0.5;
+  }
+</style>
