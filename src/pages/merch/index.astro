@@ -9,12 +9,14 @@ const images = await Astro.glob("../../assets/images/merch/*");
   title="GNU merchandise"
   description="We are GNU. This is a list with all of its members."
 >
-  <div class="flex min-h-screen items-center justify-center">
-    <div class="flex h-52 flex-row flex-wrap space-y-2 p-4">
+  <div class="flex h-full items-center justify-center">
+    <div
+      class="flex flex-row flex-wrap items-center justify-center space-y-2 p-4"
+    >
       {
         images.map((img) => (
           <Image
-            class="h-full w-1/2 object-contain"
+            class="h-48 w-1/2 max-w-xs  object-contain"
             src={img.default}
             alt="merge"
           />
