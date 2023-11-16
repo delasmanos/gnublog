@@ -43,7 +43,7 @@ Features:
 │   │   │   └── main.json
 │   │   ├── page
 │   │   └── settings
-│   │       └── variables.json
+│   │       └── site.json
 │   ├── env.d.ts
 │   ├── layouts
 │   ├── pages

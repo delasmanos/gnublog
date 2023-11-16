@@ -1,34 +1,29 @@
 ---
-import { getEntry } from "astro:content";
+import { getImage } from "astro:assets";
+import bg from "~assets/images/gnu.jpg";
+import Link from "~components/Link.astro";
+import { getSiteSettings } from "~util/collection-helper";
 import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
-import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
-// Example: Instead of creating an `img` tag,
-// apply an optimized image to a div using CSS.
-import bg from "~assets/images/gnu.jpg";
-import { getImage } from "astro:assets";
-import Link from "~components/Link.astro";
-// import placeHolderHero from "~assets/images/blog-generic-placeholder.jpg";
 
 const optimizedBackgroundImage = await getImage({ src: bg });
-const settings = await getEntry("settings", "variables");
-const bgImage = `url(${optimizedBackgroundImage.src})`;
+const bgImageCssUrl = `url(${optimizedBackgroundImage.src})`;
+const settings = await getSiteSettings();
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
-    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+    <BaseHead
+      title={settings.siteName}
+      description={settings.siteDescription}
+    />
     <script
       is:inline
       src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   </head>
   <body class={"h-screen "}>
-    <Header
-      classNames="text-white"
-      title={settings.data.siteName}
-      isHome={true}
-    />
+    <Header classNames="text-white" title={settings.siteName} isHome={true} />
     <main
       class="flex h-full items-center justify-center"
       transition:name="content"
@@ -41,9 +36,9 @@ const bgImage = `url(${optimizedBackgroundImage.src})`;
         <Link href="/band-mates">WE ARE GNU!</Link>
       </h1>
     </main>
-    <style define:vars={{ bgImage }}>
+    <style define:vars={{ bgImageCssUrl }}>
       body::before {
-        background-image: var(--bgImage);
+        background-image: var(--bgImageCssUrl);
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
