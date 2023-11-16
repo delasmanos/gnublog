@@ -12,6 +12,12 @@ Features:
 - ✅ CMS funcionality via Decap CMS (not yet full implemented TODOS: create custom backend so non githubusers can login and to get rid of the dependency to netlify)
 - ✅ optimized by jamstack
 
+## TODO
+
+- [ ] Fix combine PRs workflow or install github [cli](<https://github.com/cli/cli>). [info](https://marcreichel.dev/blog/combine-dependabot-pull-requests)
+- [ ] Pagination
+- [ ] Category list
+
 ## 🚀 Project Structure
 
 ```text
