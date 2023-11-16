@@ -1,12 +1,12 @@
 ---
-import { getEntry } from "astro:content";
+import { getSiteSettings } from "~util/collection-helper";
 
-const settings = await getEntry("settings", "variables");
+const settings = await getSiteSettings();
 ---
 
 <footer class="flex w-full shrink-0 flex-col border-t-[1px] border-gray-300">
   <div class="container mx-auto px-4 py-8">
-    {settings.data.brandSlogan}
+    {settings.brandSlogan}
     {/* hier die karten */}
     <!-- <FooterRows /> -->
     {/* <ContactCard centered={false} /> */}
