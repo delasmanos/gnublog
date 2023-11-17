@@ -1,0 +1,42 @@
+---
+import EmailShareButton from "./Email.astro";
+import FacebookShareButton from "./Facebook.astro";
+import HackerNewsShareButton from "./HackerNews.astro";
+import LinkedInShareButton from "./LinkedIn.astro";
+import RedditShareButton from "./Reddit.astro";
+import TwitterShareButton from "./Twitter.astro";
+import type ButtonProps from "./types";
+import type { HTMLAttributes } from "astro/types";
+
+type Props = ButtonProps &
+  HTMLAttributes<"div"> & {
+    buttons?: HTMLElement[];
+    buttonClass: string;
+  };
+
+const DEFAULT_COMPONENTS = [
+  TwitterShareButton,
+  FacebookShareButton,
+  HackerNewsShareButton,
+  LinkedInShareButton,
+  RedditShareButton,
+  EmailShareButton,
+];
+
+const {
+  buttons = DEFAULT_COMPONENTS,
+  url = Astro.request.url,
+  title,
+  description,
+  via,
+  ...rest
+} = Astro.props;
+---
+
+<div {...rest}>
+  {
+    buttons.map((Btn) => (
+      <Btn url={url} description={description} via={via} title={title} />
+    ))
+  }
+</div>
