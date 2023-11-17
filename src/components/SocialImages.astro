@@ -18,21 +18,18 @@ if (importedImage && typeof importedImage !== "string") {
   try {
     socialImage = await getImage({
       src: importedImage.src,
-      width: 256,
-      height: 256,
-      format: "webP",
+      width: 300,
+      height: 600,
+      format: "png",
     });
-    console.log("256", socialImage);
     twitterImage = await getImage({
       src: importedImage.src,
       width: 1200,
       height: 675,
       format: "webP",
     });
-    console.log("1200", twitterImage);
     imageUrl = new URL(socialImage.src, Astro.url);
     twitterImageUrl = new URL(twitterImage.src, Astro.url);
-    // socialImage = twitterImage;
   } catch (error) {
     console.log(error);
   }
@@ -48,10 +45,13 @@ if (importedImage && typeof importedImage !== "string") {
 }
 ---
 
-<meta property="og:type" content="website" />
+<meta property="og:type" content="article" />
+<meta property="og:locale" content="en_GB" />
+<meta property="og:site_name" content="GNU.band" />
 <meta property="og:url" content={Astro.url} />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
+<meta property="og:image:alt" content={altText} />
 <>
   {
     socialImage ? (

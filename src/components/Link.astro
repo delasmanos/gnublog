@@ -5,7 +5,6 @@ type Props = HTMLAttributes<"a">;
 const { href, ...rest } = Astro.props;
 const base = import.meta.env.BASE_URL;
 const hrefWithBaseUrl = `${base === "/" ? "" : base}${href}`;
-console.log("hrefWithBaseUrl: ", hrefWithBaseUrl, base);
 ---
 
 <a href={hrefWithBaseUrl} {...rest}><slot /></a>
