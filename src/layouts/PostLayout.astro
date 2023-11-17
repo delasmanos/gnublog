@@ -9,7 +9,6 @@ import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
 import BlogHeading from "~components/BlogHeading.astro";
 import MdContainer from "~components/MdContainer.astro";
-import { Debug } from "astro:components";
 
 type Props = CollectionEntry<"blog">["data"] & {
   minutesToRead: ReadTimeResults;
@@ -33,17 +32,13 @@ const {
 let ogurl = "";
 let src = "";
 try {
-  if (heroImage) {
-    const f = await import(heroImage.src);
-    const hermoimage = f.default.split("?");
-    const img = import(hermoimage[0]);
-    const imgUrl = await getImage({ src: img });
-    src = imgUrl.src;
+  if (heroImage && import.meta.env.PROD) {
+    ogurl = Astro.site?.origin + (await getImage(heroImage)).src;
+    console.log("????????", ogurl);
   }
 } catch (e) {
   console.log(e);
 }
-ogurl = Astro.site?.origin + src;
 ---
 
 <html lang="en">
@@ -58,7 +53,7 @@ ogurl = Astro.site?.origin + src;
         padding: 0.5rem;
       }
     </style>
-    <meta property="og:image" content={ogurl} />
+    {ogurl && <meta property="og:image" content={ogurl} />}
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
   </head>
