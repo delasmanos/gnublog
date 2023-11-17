@@ -8,16 +8,22 @@ import FormattedDate from "~components/FormattedDate.astro";
 export async function getStaticPaths() {
   const posts = await getCollection(
     "blog",
-    (p) => p.data.tags == "music-production",
+    // (p) => p.data.tags == "music-production",
   );
   return posts.map((post) => {
-    console.log(post.data);
+    // console.log(post.data);
     return {
       params: { tags: post.data.tags },
       props: post,
     };
   });
 }
+const page = Astro.props;
+console.log(
+  "params",
+
+  page,
+);
 const posts = (
   await getCollection("blog", (p) => p.data.tags == "music-production")
 ).sort((a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf());
