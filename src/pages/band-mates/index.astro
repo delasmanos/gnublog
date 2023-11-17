@@ -57,7 +57,6 @@ type Props = CollectionEntry<"band-mates">;
   import { LINK_PREFIX } from "consts";
 
   const setup = () => {
-    console.log(`${LINK_PREFIX}/audio/benno.m4a`);
     const cards: NodeListOf<HTMLLinkElement> =
       document.querySelectorAll("[data-card]");
     const sounds = {
@@ -68,7 +67,6 @@ type Props = CollectionEntry<"band-mates">;
     };
     cards.forEach((e) => {
       const who = e.dataset.card as keyof typeof sounds;
-      console.log(who, e);
       e.addEventListener("click", () => {
         sounds[who].play();
       });
