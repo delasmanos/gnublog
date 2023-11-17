@@ -54,28 +54,26 @@ type Props = CollectionEntry<"band-mates">;
   </div>
 </DocumentLayout>
 <script>
+  import { LINK_PREFIX } from "consts";
+
   const setup = () => {
+    console.log(`${LINK_PREFIX}/audio/benno.m4a`);
     const cards: NodeListOf<HTMLLinkElement> =
       document.querySelectorAll("[data-card]");
     const sounds = {
-      benno: new Audio("/audio/benno.m4a"),
-      christoph: new Audio("/audio/christoph.m4a"),
-      daniel: new Audio("/audio/daniel.m4a"),
-      denio: new Audio("/audio/denio.m4a"),
+      benno: new Audio(`${LINK_PREFIX}/audio/benno.m4a`),
+      christoph: new Audio(`${LINK_PREFIX}/audio/christoph.m4a`),
+      daniel: new Audio(`${LINK_PREFIX}/audio/daniel.m4a`),
+      denio: new Audio(`${LINK_PREFIX}/audio/denio.m4a`),
     };
     cards.forEach((e) => {
       const who = e.dataset.card as keyof typeof sounds;
       console.log(who, e);
-      e.addEventListener("mouseover", () => {
-        function fade(arg0: {
-          delay: number;
-        }): import("astro").TransitionAnimationValue | undefined {
-          throw new Error("Function not implemented.");
-        }
+      e.addEventListener("click", () => {
         sounds[who].play();
       });
     });
   };
   document.addEventListener("astro:after-swap", setup);
-  // document.addEventListener("astro:page-load", setup);
+  document.addEventListener("astro:page-load", setup);
 </script>
