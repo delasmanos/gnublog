@@ -28,10 +28,17 @@ collections:
       - { name: heroImageAltText, label: Hero image alt text }
       - { name: showHeadingPermalink, label: Show Permalinks in headings, widget: "boolean" }
       - { name: showToc, label: Show Table of contents, widget: "boolean" }
-      - { name: author, label: "Written by denio, benno,daniel or christoph?",  widget: "string" }
       - { name: tags, label: Tags one of "article" "music-production" "coding",  widget: "string" }
       - { name: published, label: Mark as published,  widget: "boolean" }
       - { label: 'Blog post content', name: 'body', widget: 'markdown' }
+      - label: "Author"
+        name: "author"
+        widget: "select"
+        options:
+          - { label: "Denio", value: "delasmanos" }
+          - { label: "Christoph", value: "christoph" }
+          - { label: "Daniel Funki Funk", value: "daniel" }
+          - { label: "Benno", value: "benno" }
 
   - name: band-mates
     label: bandmates
@@ -47,4 +54,24 @@ collections:
       - { name: avatar, label: Avatar, widget: image, allow_multiple: false, media_folder: './'  }
       - { label: 'Blog post content', name: 'body', widget: 'markdown' }
 
+  - name: settings
+    label: Site settings
+    folder: src/content/settings
+    create: false
+    extension: json
+    format: frontmatter
+    preview_path: settings/{{id}}
+    fields:
+      - { name: siteName, label: Site name, widget: "string" }
+      - { name: siteDescription, label: Site description, widget: "string" }
+      - { name: domain, label: postion, widget: "string" }
+      - { name: brandSlogan, label: Brand slogan, widget: string }
+      - { name: email, label: Brand slogan, widget: string }
+      - label: 'Telephone'
+        name: 'telephone'
+        widget: 'object'
+        collapsed: false
+        fields:
+          - { name: prefix, label: Telphone prefix, widget: "string" }
+          - { name: number, label: Telphone number, widget: "string" }
   
