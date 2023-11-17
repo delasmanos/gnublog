@@ -1,10 +1,11 @@
 ---
+import type { AstroBuiltinAttributes } from "astro";
 import type { HTMLAttributes } from "astro/types";
 import { LINK_PREFIX } from "consts";
-export type Props = HTMLAttributes<"a">;
+export type Props = HTMLAttributes<"a"> & AstroBuiltinAttributes;
 const { href, ...rest } = Astro.props;
-const augHref = `/${LINK_PREFIX}${href}`;
+const augHref = `${LINK_PREFIX}${href}`;
 console.log(augHref);
 ---
 
-<a href={`/${LINK_PREFIX}${href}`} {...rest}><slot /></a>
+<a href={augHref} {...rest}><slot /></a>
