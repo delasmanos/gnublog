@@ -17,13 +17,25 @@ const { title, description } = Astro.props;
     <ViewTransitions />
   </head>
   <body
-    class="dark:bg-radial h-full bg-gnutrast-light"
+    class="dark:bg-radial flex h-full min-h-[100vh] flex-col bg-gnutrast-light"
     transition:animate="none"
   >
     <Header classNames="text-transparent" />
+    <!-- TODO move out of the documentlayout -->
     <main class="container mx-auto" transition:animate="fade">
       <slot />
     </main>
     <Footer />
+    <style>
+      main {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        height: auto;
+        flex-basis: max-content;
+        flex-grow: 1;
+      }
+    </style>
   </body>
 </html>

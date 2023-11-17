@@ -4,16 +4,21 @@ import HeaderLink from "./HeaderLink.astro";
 import ThemeIcon from "./atoms/ThemeIcon.astro";
 import { twMerge } from "tailwind-merge";
 
-type Props = { isHome?: boolean; title?: string; classNames?: string };
+type Props = {
+  isHome?: boolean;
+  title?: string;
+  classNames?: string;
+  containerClass?: string;
+};
 const main: CollectionEntry<"navigation"> = await getEntry(
   "navigation",
   "main",
 );
 const items = main.data;
-const { isHome, classNames } = Astro.props;
+const { isHome, classNames, containerClass } = Astro.props;
 ---
 
-<header class="fixed z-50 flex w-full flex-row">
+<header class={twMerge("z-50 flex w-full flex-row", containerClass)}>
   <nav
     class={twMerge(
       "ml-auto flex flex-row space-x-4 self-end items-end p-4 text-xl sm:text-4xl font-extrabold uppercase",
