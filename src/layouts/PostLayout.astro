@@ -1,15 +1,15 @@
 ---
-import { Image, getImage } from "astro:assets";
+import { Image } from "astro:assets";
 import type { CollectionEntry } from "astro:content";
 import { ViewTransitions } from "astro:transitions";
 import type { ReadTimeResults } from "reading-time";
+import BlogHeading from "~components/BlogHeading.astro";
 import BlogSubTitle from "~components/BlogSubTitle.astro";
+import MdContainer from "~components/MdContainer.astro";
 import BaseHead from "../components/BaseHead.astro";
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
-import BlogHeading from "~components/BlogHeading.astro";
-import MdContainer from "~components/MdContainer.astro";
-import pic from "../assets/images/blog-generic-placeholder.jpg";
+import SocialShare from "../components/social-share-buttton/SocialShare.astro";
 
 type Props = CollectionEntry<"blog">["data"] & {
   minutesToRead: ReadTimeResults;
@@ -48,19 +48,16 @@ const {
       }
     </style>
   </head>
-  <body
-    class="h-full bg-gnutrast-light dark:bg-slate-600"
-    transition:animate="none"
-  >
+  <body class="bg-gnu-bg h-full dark:bg-slate-600" transition:animate="none">
     <Header classNames="text-transparent" />
     <main
       transition:animate="slide"
       transition:name="content"
-      class:list={["container mx-auto "]}
+      class:list={["container mx-auto bg-white/20 dark:bg-white/10 "]}
     >
       <MdContainer
         showHeadingPermalink={showHeadingPermalink}
-        class="prose prose-sm prose-zinc mx-auto max-w-4xl px-4 pt-20 dark:prose-invert md:prose-xl prose-h1:mb-0 prose-h1:text-gnudark dark:prose-h1:text-gnurange"
+        class="prose prose-sm prose-zinc mx-auto max-w-4xl px-4 pt-20 dark:prose-invert md:prose-xl prose-h1:mb-0 prose-h1:text-gnudark prose-h2:first:mt-0 dark:prose-h1:text-gnurange"
       >
         <div class="hero-image">
           {
@@ -88,7 +85,12 @@ const {
             {title}
             {subTitle && <Fragment slot="subTitle">{subTitle}</Fragment>}
           </BlogHeading>
-          <hr class="not-prose mb-2 mt-0 border-t-gnurange" />
+          <hr class="not-prose mb-0 mt-0 border-t-gnurange" />
+          <SocialShare
+            class="ml-auto flex h-11 items-center space-x-2 bg-gnurange px-4 drop-shadow-md"
+            description={description}
+            title={title}
+          />
           <slot />
         </div>
       </MdContainer>
@@ -102,5 +104,22 @@ const {
       } */
       </style>
     </main>
+    <style>
+      :global(.social-share-btn) {
+        @apply h-6 w-6;
+      }
+      :global(.social-share-btn svg) {
+        @apply h-6 w-6 fill-neutral-100;
+        /* fill: var(--blue-munsell); */
+        /* outline: 2px solid red; */
+      }
+      :global(.dark .social-share-btn svg) {
+        /* @apply h-5 w-5; */
+        /* fill: var(--gamboge);
+        /* stroke: gray;
+        stroke-width: 1px;
+        stroke-linejoin: round; * */
+      }
+    </style>
   </body>
 </html>
