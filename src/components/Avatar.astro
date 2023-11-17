@@ -7,7 +7,7 @@ import type { CSSProperty } from "astro/types";
 // } from "astro:assets";
 import type { CollectionEntry } from "astro:content";
 type I = CollectionEntry<"blog">["data"]["heroImage"];
-export type Props = I & {
+type Props = I & {
   size?: CSSProperty;
   imagePositon?:
     | "object-left-top"
@@ -37,6 +37,7 @@ const { imagePositon, size, ...rest } = Astro.props satisfies Props;
 const objectClass = imagePositon
   ? classes.find((e) => e === imagePositon)
   : "center";
+console.log(objectClass);
 const dimension = size ? size : "40rem";
 ---
 
@@ -47,6 +48,7 @@ const dimension = size ? size : "40rem";
     height: dimension,
   }}
   class="relative max-w-full overflow-hidden rounded-full object-bottom"
+  {...rest}
 >
   <!-- <Image {...rest} /> -->
 </div>

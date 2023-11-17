@@ -1,8 +1,7 @@
 ---
-import type { AstroBuiltinAttributes } from "astro";
 import type { HTMLAttributes } from "astro/types";
-import { LINK_PREFIX } from "consts";
-export type Props = HTMLAttributes<"a"> & AstroBuiltinAttributes;
+
+type Props = HTMLAttributes<"a">;
 const { href, ...rest } = Astro.props;
 const base = import.meta.env.BASE_URL;
 const augHref = `${base === "/" ? "" : base}${href}`;
