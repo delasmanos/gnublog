@@ -9,7 +9,8 @@
       "~util/*": [ "util/*"],
       "~components/*": [ "components/*"],
       "~content/*": [ "content/*"],
-      "~assets/*": [ "assets/*"]
+      "~assets/*": [ "assets/*"],
+      "~layouts/*": [ "layouts/*"]
     }
   }
 }
