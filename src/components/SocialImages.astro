@@ -14,7 +14,11 @@ let socialImage;
 let twitterImage;
 let imageUrl;
 let twitterImageUrl;
-if (importedImage && typeof importedImage !== "string") {
+if (
+  importedImage &&
+  typeof importedImage !== "string" &&
+  import.meta.env.PROD
+) {
   try {
     socialImage = await getImage({
       src: importedImage.src,
