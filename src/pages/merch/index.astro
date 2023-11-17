@@ -1,0 +1,25 @@
+---
+import DocumentLayout from "~layouts/DocumentLayout.astro";
+import { Image } from "astro:assets";
+
+const images = await Astro.glob("../../assets/images/merch/*");
+---
+
+<DocumentLayout
+  title="GNU merchandise"
+  description="We are GNU. This is a list with all of its members."
+>
+  <div class="flex min-h-screen items-center justify-center">
+    <div class="flex h-52 flex-row flex-wrap space-y-2 p-4">
+      {
+        images.map((img) => (
+          <Image
+            class="h-full w-1/2 object-contain"
+            src={img.default}
+            alt="merge"
+          />
+        ))
+      }
+    </div>
+  </div>
+</DocumentLayout>
