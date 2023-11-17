@@ -43,4 +43,27 @@ collections:
       - { label: "Draft", name: "isDraft", widget: "boolean", default: false}
       - { name: body, label: Body, widget: markdown }
 
+  - name: band-mates
+    label: bandmates
+    folder: src/content/band-mates
+    create: true
+    extension: json
+    format: json
+    preview_path: band-mates/{{id}}
+    fields:
+      - { name: name, label: Name }
+      - { name: nickName, label: Nickname }
+      - { name: postion, label: postion }
+      - { label: "avatar", name: "avatar" }
+      - { label: "aboutMe", name: "About me" }
 
+  - name: navigation
+    label: navigation
+    folder: src/content/navigation
+    create: true
+    extension: json
+    format: json
+    preview_path: navigation/{{id}}
+    fields:
+      - { name: displayName, label: Display namme }
+      - { name: path, label: path }
