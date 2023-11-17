@@ -1,0 +1,27 @@
+---
+import { type CollectionEntry, getCollection } from "astro:content";
+import BlogPost from "../../layouts/BlogPost.astro";
+import { formatReadingTime } from "-util/reading-time-formatter";
+
+export async function getStaticPaths({ paginate }) {
+  const posts = await getCollection("blog");
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: post,
+  }));
+}
+type Props = CollectionEntry<"blog">;
+
+const post = Astro.props;
+
+const { Content, remarkPluginFrontmatter } = await post.render();
+const minutesToReadString = formatReadingTime({
+  t: remarkPluginFrontmatter.readingTimeObj,
+  prefix: "~ ",
+  suffix: " minutes to read",
+});
+---
+
+<BlogPost {...post.data} minutesToRead={minutesToReadString}>
+  <Content />
+</BlogPost>

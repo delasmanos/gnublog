@@ -1,0 +1,42 @@
+---
+import { uniqueDomId } from "-util/id";
+import type { HTMLAttributes } from "astro/types";
+
+export type Props = HTMLAttributes<"div"> & {
+  slogan: string;
+};
+const { slogan, ...containerProps } = Astro.props;
+---
+
+<div
+  class="sticky inset-0 z-30 flex w-full shrink-0 grow-0 flex-col border-gray-300 shadow-sm"
+  {...containerProps}
+>
+  <header class="z-30 bg-white/70 backdrop-blur-lg">
+    {/* conatainer */}
+    <div class="w-full p-4 2xl:container">
+      <div class="flex flex-row items-center justify-between space-x-4">
+        <a id={uniqueDomId("brandlink")} href={"/"}>
+          <div
+            data-cmp="brand"
+            class="group flex h-full origin-top-right flex-row items-center"
+          >
+            gnu
+          </div>
+        </a>
+        {/* nav */}
+        <!-- <DesktopNav navItems={items} alignMenu="center" /> -->
+        <div id="menutriger" class="z-50 md:hidden">
+          <!-- <Hamburger
+            color="rgb(20, 184, 166)"
+            aria-label="Menü öffnen"
+            rounded
+            onToggle={(toggled) => setOpen(toggled)}
+          /> -->
+        </div>
+      </div>
+    </div>
+  </header>
+  {/* https://codepen.io/devdojo/pen/NWyPrGe */}
+</div>
+<!-- <MobileNav open={open} navItems={navItems} /> -->

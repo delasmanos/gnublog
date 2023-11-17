@@ -1,0 +1,12 @@
+---
+import { uniqueDomId } from "-util/id";
+---
+
+<div id={uniqueDomId("page")} class="flex min-h-screen flex-col">
+  <!-- <MainNavigation /> -->
+  <main class="flex flex-1 overflow-y-auto">
+    <slot />
+    <!-- <CookieConsentDialog /> -->
+  </main>
+  <!-- <Footer /> -->
+</div>
