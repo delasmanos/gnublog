@@ -31,6 +31,7 @@ collections:
       - { name: author, label: Written by denio,benno,daniel or christoph?,  widget: "string" }
       - { name: tags, label: Tags one of "article" "music-production" "coding",  widget: "string" }
       - { name: published, label: Mark as published,  widget: "boolean" }
+      - { label: 'Blog post content', name: 'body', widget: 'markdown' }
 
   - name: band-mates
     label: bandmates
@@ -44,5 +45,6 @@ collections:
       - { name: nickName, label: Nickname, widget: "string" }
       - { name: postion, label: postion, widget: "string" }
       - { name: avatar, label: Avatar, widget: image, allow_multiple: false, media_folder: './'  }
+      - { label: 'Blog post content', name: 'body', widget: 'markdown' }
 
   
