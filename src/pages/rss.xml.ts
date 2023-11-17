@@ -1,10 +1,10 @@
 import rss from "@astrojs/rss";
-import { getCollection } from "astro:content";
-import { SITE_TITLE, SITE_DESCRIPTION, LINK_PREFIX } from "../consts";
 import type { APIContext } from "astro";
+import { getPublishedPosts } from "~util/collection-helper";
+import { LINK_PREFIX, SITE_DESCRIPTION, SITE_TITLE } from "../consts";
 const base = LINK_PREFIX;
 export const GET = async (context: APIContext) => {
-  const posts = await getCollection("blog");
+  const posts = await getPublishedPosts();
 
   return rss({
     title: SITE_TITLE + " blog",
