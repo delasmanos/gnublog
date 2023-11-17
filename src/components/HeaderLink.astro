@@ -1,6 +1,7 @@
 ---
 import type { HTMLAttributes } from "astro/types";
 import { twMerge } from "tailwind-merge";
+import Link from "./Link.astro";
 
 type Props = HTMLAttributes<"a"> & { showUnderline?: boolean };
 
@@ -13,7 +14,7 @@ const isActive =
   href === pathname || href === pathname.replace(/\/$/, "") || isSub;
 ---
 
-<a
+<Link
   href={href}
   style={{ "text-shadow": "2px 2px var(--chili-red)" }}
   class:list={[
@@ -30,7 +31,7 @@ const isActive =
   {...props}
 >
   <slot />
-</a>
+</Link>
 <style>
   /* a {
     display: inline-block;

@@ -7,6 +7,7 @@ import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
 // apply an optimized image to a div using CSS.
 import bg from "~assets/images/gnu.jpg";
 import { getImage } from "astro:assets";
+import Link from "~components/Link.astro";
 // import placeHolderHero from "~assets/images/blog-generic-placeholder.jpg";
 
 const optimizedBackgroundImage = await getImage({ src: bg });
@@ -34,7 +35,7 @@ const bgImage = `url(${optimizedBackgroundImage.src})`;
         id="wearegnu"
         class="pulsate hover:scale-120 transform text-[3.5rem] transition-all md:text-[5rem]"
       >
-        <a href="/band-mates">WE ARE GNU!</a>
+        <Link href="/band-mates">WE ARE GNU!</Link>
       </h1>
     </main>
     <style define:vars={{ bgImage }}>

@@ -3,6 +3,7 @@ import { Image } from "astro:assets";
 import { getCollection, type CollectionEntry } from "astro:content";
 import { fade } from "astro:transitions";
 import DocumentLayout from "layouts/DocumentLayout.astro";
+import Link from "~components/Link.astro";
 import { slugify } from "~util/slugify";
 
 const authors = (await getCollection("band-mates")).sort((a, b) =>
@@ -35,7 +36,7 @@ type Props = CollectionEntry<"band-mates">;
                 {a.data.nickName}
               </p>
             </div>
-            <a
+            <Link
               transition:persist
               data-card={slugify(a.data.name)}
               href={`/band-mates/${slugify(a.data.name)}`}
@@ -45,7 +46,7 @@ type Props = CollectionEntry<"band-mates">;
                 src={a.data.avatar}
                 alt={a.data.name}
               />
-            </a>
+            </Link>
           </div>
         </div>
       ))
