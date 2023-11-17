@@ -10,6 +10,7 @@ import { collapsibleToc } from "./src/server/remark-plugins/astro-collapsible-to
 import tailwind from "@astrojs/tailwind";
 import {loadEnv} from "vite"
 import { PERMALINK_CLASSNAME, TOC_DETAILS_CLASSNAME } from "./src/server/remark-plugins/consts"
+import twind from './src/integrations/twind/index.ts'
 
 const { PUBLIC_BASE_PATH } = loadEnv(process.env.PUBLIC_BASE_PATH, process.cwd(),"");
 console.log('astro.config basepath: ',PUBLIC_BASE_PATH);
@@ -34,6 +35,9 @@ export default defineConfig({
       },
       content: [h('span.visually-hidden', ' permalink'), s('span.icon-link-value', ' 🔗')]
     }]]
+  },
+  build:{
+    // inlineStylesheets: 'never' //auto by default
   },
   integrations: [mdx(), sitemap(), 
     tailwind({applyBaseStyles: false})

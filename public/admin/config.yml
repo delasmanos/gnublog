@@ -27,6 +27,7 @@ collections:
       - { name: subTitle, label: Subtitle }
       - { name: description, label: Description }
       - { name: pubDate, label: Date, widget: datetime, date_format: "YYYY-MM-DD" }
+      # eventuel auf absoluten path umschwenken wenn das nochmal passiert das bild nicht den pfad hat : /src/content/blog
       - { name: heroImage, label: Hero image, widget: image, allow_multiple: false, media_folder: './'  }
       - { name: heroImageAltText, label: Hero image alt text }
       - { name: showHeadingPermalink, label: Show Permalinks in headings, widget: "boolean" , default: false}

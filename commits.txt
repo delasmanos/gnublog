@@ -1,0 +1,807 @@
+commit cc1f436f9327d47c0d90b604468aeddc4a673b1c
+Merge: 7b95366 3d346d0
+Author: delasmanos <149575871+delasmanos@users.noreply.github.com>
+Date:   Fri Nov 17 11:54:35 2023 +0100
+
+    Merge pull request #21 from delasmanos/cms/band-mates/christoph
+    
+    Update bandmates “christoph”
+
+commit 3d346d089bbf8c76172d0cfe39d7e5118b147791
+Author: christoph.blessing <christoph.blessing@posteo.de>
+Date:   Fri Nov 17 07:55:29 2023 +0000
+
+    Update bandmates “christoph”
+
+commit 7b95366ed6293d620e80622899a266c68fcffa2f
+Author: Dennis Rintz <dennis.rintz@quentic.com>
+Date:   Fri Nov 17 02:35:32 2023 +0100
+
+    chore: publish article
+
+commit dee0b542afad2418618d62f06cd437ef89e0dc08
+Merge: cecf78d 40c27a6
+Author: Dennis Rintz <dennis.rintz@quentic.com>
+Date:   Fri Nov 17 02:33:28 2023 +0100
+
+    Merge branch 'main' of https://github.com/delasmanos/gnublog
+
+commit 40c27a6975be52e6f0a327ef29ccc8bab7007401
+Merge: 43eb34b da1caf8
+Author: delasmanos <149575871+delasmanos@users.noreply.github.com>
+Date:   Fri Nov 17 02:32:29 2023 +0100
+
+    Merge pull request #20 from delasmanos/cms/blog/unveiling-a-darker-side-of-the-beatles
+    
+    Cms/blog/unveiling a darker side of the beatles
+
+commit da1caf8045bc47d6894db00db1c60738a4ebfa16
+Merge: 5855f22 43eb34b
+Author: Dennis Rintz <dennis.rintz@quentic.com>
+Date:   Fri Nov 17 02:31:16 2023 +0100
+
+    Merge branch 'main' of https://github.com/delasmanos/gnublog into cms/blog/unveiling-a-darker-side-of-the-beatles
+
+commit cecf78df7e2a9b353acc3348231331b8e1276088
+Author: Dennis Rintz <dennis.rintz@quentic.com>
+Date:   Fri Nov 17 02:30:05 2023 +0100
+
+    fix: default value for cms widgets
+
+commit 5855f22ebb72c5944a672ef433c4fae9be25a32b
+Author: delasmanos <149575871+delasmanos@users.noreply.github.com>
+Date:   Fri Nov 17 02:29:02 2023 +0100
+
+    fix: image path
+
+commit 43eb34b4f9dbc30b80225c5d7a63b508eb15841c
+Merge: 9ca3c33 1dbb14f
+Author: delasmanos <149575871+delasmanos@users.noreply.github.com>
+Date:   Fri Nov 17 02:24:22 2023 +0100
+
+    Merge pull request #19 from delasmanos/cms/blog/unveiling-a-darker-side-of-the-beatles
+    
+    Update Articles “unveiling-a-darker-side-of-the-beatles”
+
+commit 1dbb14f398f6a9f173ad4db252f84cb60783813f
+Author: deniosi <deniosi@gmx.de>
+Date:   Fri Nov 17 01:21:35 2023 +0000
+
+    Update Articles “unveiling-a-darker-side-of-the-beatles”
+
+commit 9ca3c338fe9897a8d5bf4c279f5de62887e5c68e
+Author: delasmanos <149575871+delasmanos@users.noreply.github.com>
+Date:   Thu Nov 16 23:16:27 2023 +0100
+
+    Create Articles “unveiling-a-darker-side-of-the-beatles” (#17)
+    
+    Automatically generated. Merged on Decap CMS.
+
+commit 24c12758e0a9c1fcb6b67a53382b5286cb475ca6
+Author: Dennis Rintz <dennis.rintz@quentic.com>
+Date:   Thu Nov 16 13:50:19 2023 +0100
+
+    chore(cms-preview): preview styles with picocss
+
+commit 6ba3c328026863daf4b4cb912f35a89b7291f3fa
+Merge: 8e8e361 26978a1
+Author: delasmanos <149575871+delasmanos@users.noreply.github.com>
+Date:   Thu Nov 16 13:20:52 2023 +0100
+
+    Merge pull request #16 from delasmanos/dependabot-combined
+    
+    Dependabot combined
+
+commit 26978a1371f32a37ba3ecf12f4ecd8e8d0b3bcb8
+Author: Dennis Rintz <dennis.rintz@quentic.com>
+Date:   Thu Nov 16 13:20:11 2023 +0100
+
+    chore: extract commonly used classes
+
+commit cc3dc26ec31a8017e961194bd4a3f11a5667aec4
+Merge: 9884aee 913046e
+Author: Dennis Rintz <dennis.rintz@quentic.com>
+Date:   Thu Nov 16 13:18:59 2023 +0100
+
+    Merge branch 'dependabot/npm_and_yarn/prettier-3.1.0' of https://github.com/delasmanos/gnublog into dependabot-combined
+
+commit 9884aee4b0866f1780ecfe715d59f8fbf37c55f1
+Merge: ab715cb 4dc54e4
+Author: Dennis Rintz <dennis.rintz@quentic.com>
+Date:   Thu Nov 16 13:18:40 2023 +0100
+
+    Merge branch 'dependabot/npm_and_yarn/typescript-eslint/parser-6.11.0' of https://github.com/delasmanos/gnublog into dependabot-combined
+
+commit ab715cbc71e1f21b1fbb192e879be63ceb4eeca5
+Merge: 8e8e361 f2cbb0b
+Author: Dennis Rintz <dennis.rintz@quentic.com>
+Date:   Thu Nov 16 13:18:19 2023 +0100
+
+    Merge branch 'dependabot/npm_and_yarn/astro-3.5.4' of https://github.com/delasmanos/gnublog into dependabot-combined
+
+commit 8e8e361165668c0ca8fafc3834d0d7f803431721
+Merge: 6b1d874 0617875
+Author: Dennis Rintz <dennis.rintz@quentic.com>
+Date:   Thu Nov 16 13:14:56 2023 +0100
+
+    Merge branch 'main' of https://github.com/delasmanos/gnublog
+
+commit 6b1d8745ddf7530f8523fd25de0931946094ffee
+Author: Dennis Rintz <dennis.rintz@quentic.com>
+Date:   Thu Nov 16 13:14:45 2023 +0100
+
+    chore(docs-config): widget for tags, README todo
+
+commit 061787569bd3a1cb5e7c43ee5c8335fee400ea06
+Author: delasmanos <149575871+delasmanos@users.noreply.github.com>
+Date:   Thu Nov 16 13:03:40 2023 +0100
+
+    Update combine-prs.yml
+
+commit 4dc54e4154db40eaae1c032f867fd5bf403804a2
+Author: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>
+Date:   Thu Nov 16 12:01:46 2023 +0000
+
+    chore(deps-dev): bump @typescript-eslint/parser from 6.9.1 to 6.11.0
+    
+    Bumps [@typescript-eslint/parser](https://github.com/typescript-eslint/typescript-eslint/tree/HEAD/packages/parser) from 6.9.1 to 6.11.0.
+    - [Release notes](https://github.com/typescript-eslint/typescript-eslint/releases)
+    - [Changelog](https://github.com/typescript-eslint/typescript-eslint/blob/main/packages/parser/CHANGELOG.md)
+    - [Commits](https://github.com/typescript-eslint/typescript-eslint/commits/v6.11.0/packages/parser)
+    
+    ---
+    updated-dependencies:
+    - dependency-name: "@typescript-eslint/parser"
+      dependency-type: direct:development
+      update-type: version-update:semver-minor
+    ...
+    
+    Signed-off-by: dependabot[bot] <support@github.com>
+
+commit 0f245953893ffd6f533fa260d12e1ed583079f5a
+Merge: abca58e 87f0cd3
+Author: delasmanos <149575871+delasmanos@users.noreply.github.com>
+Date:   Thu Nov 16 13:00:54 2023 +0100
+
+    Merge pull request #12 from delasmanos/dependabot/npm_and_yarn/divriots/jampack-0.22.1
+    
+    chore(deps-dev): bump @divriots/jampack from 0.21.1 to 0.22.1
+
+commit f2cbb0b994f4189f48aa27c76a89c338b49e6e59
+Author: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>
+Date:   Thu Nov 16 11:55:52 2023 +0000
+
+    chore(deps): bump astro from 3.5.0 to 3.5.4
+    
+    Bumps [astro](https://github.com/withastro/astro/tree/HEAD/packages/astro) from 3.5.0 to 3.5.4.
+    - [Release notes](https://github.com/withastro/astro/releases)
+    - [Changelog](https://github.com/withastro/astro/blob/main/packages/astro/CHANGELOG.md)
+    - [Commits](https://github.com/withastro/astro/commits/astro@3.5.4/packages/astro)
+    
+    ---
+    updated-dependencies:
+    - dependency-name: astro
+      dependency-type: direct:production
+      update-type: version-update:semver-patch
+    ...
+    
+    Signed-off-by: dependabot[bot] <support@github.com>
+
+commit abca58e46a5013debafe7530d95a37e789145ecf
+Merge: 72ce390 8c321aa
+Author: Dennis Rintz <dennis.rintz@quentic.com>
+Date:   Thu Nov 16 12:54:42 2023 +0100
+
+    Merge branch 'main' of https://github.com/delasmanos/gnublog
+
+commit 72ce3904a4a194018ece6413925b514b2ed6387f
+Author: Dennis Rintz <dennis.rintz@quentic.com>
+Date:   Thu Nov 16 12:54:26 2023 +0100
+
+    chore(automation): add combine prs workflow
+
+commit de7822315ffb8df6b2a7d8e1e67443fe741d1c5b
+Author: Dennis Rintz <dennis.rintz@quentic.com>
+Date:   Thu Nov 16 12:49:18 2023 +0100
+
+    chore(docs): readme and remove comments
+
+commit 58317d1b5b1dfbb984208eea1a197ae668c055d7
+Author: Dennis Rintz <dennis.rintz@quentic.com>
+Date:   Thu Nov 16 12:48:03 2023 +0100
+
+    chore(code-quality): cleanup consts and extract code
+
+commit 675688baff7acbb4702eb2f481d21f631cb80ce2
+Author: Dennis Rintz <dennis.rintz@quentic.com>
+Date:   Thu Nov 16 12:39:20 2023 +0100
+
+    fix: packagename
+
+commit 74d7ee2a8b450f57244bd5f87380a343eeab6e1c
+Author: Dennis Rintz <dennis.rintz@quentic.com>
+Date:   Thu Nov 16 12:38:59 2023 +0100
+
+    fix: decap config widgets
+
+commit 913046e90bc6fc4384550263ca72246b43c43a18
+Author: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>
+Date:   Thu Nov 16 11:13:53 2023 +0000
+
+    chore(deps-dev): bump prettier from 3.0.3 to 3.1.0
+    
+    Bumps [prettier](https://github.com/prettier/prettier) from 3.0.3 to 3.1.0.
+    - [Release notes](https://github.com/prettier/prettier/releases)
+    - [Changelog](https://github.com/prettier/prettier/blob/main/CHANGELOG.md)
+    - [Commits](https://github.com/prettier/prettier/compare/3.0.3...3.1.0)
+    
+    ---
+    updated-dependencies:
+    - dependency-name: prettier
+      dependency-type: direct:development
+      update-type: version-update:semver-minor
+    ...
+    
+    Signed-off-by: dependabot[bot] <support@github.com>
+
+commit 87f0cd32b48b96a9bde146382a244faf6301dfe2
+Author: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>
+Date:   Thu Nov 16 11:13:38 2023 +0000
+
+    chore(deps-dev): bump @divriots/jampack from 0.21.1 to 0.22.1
+    
+    Bumps [@divriots/jampack](https://github.com/divriots/jampack) from 0.21.1 to 0.22.1.
+    - [Commits](https://github.com/divriots/jampack/commits)
+    
+    ---
+    updated-dependencies:
+    - dependency-name: "@divriots/jampack"
+      dependency-type: direct:development
+      update-type: version-update:semver-minor
+    ...
+    
+    Signed-off-by: dependabot[bot] <support@github.com>
+
+commit 8c321aa305bee9ef22c7240b444f107ebad2c33a
+Merge: 90849d4 4190998
+Author: delasmanos <149575871+delasmanos@users.noreply.github.com>
+Date:   Thu Nov 16 10:27:11 2023 +0100
+
+    Merge pull request #11 from delasmanos/dependabot/npm_and_yarn/astrojs/mdx-1.1.5
+    
+    chore(deps): bump @astrojs/mdx from 1.1.3 to 1.1.5
+
+commit 90849d44c508d39cb79fe0c6759a0a2586c3b7dd
+Merge: 607717a 2c3733e
+Author: delasmanos <149575871+delasmanos@users.noreply.github.com>
+Date:   Thu Nov 16 10:09:58 2023 +0100
+
+    Merge pull request #9 from delasmanos/dependabot/npm_and_yarn/typescript-eslint/eslint-plugin-6.11.0
+    
+    chore(deps-dev): bump @typescript-eslint/eslint-plugin from 6.9.1 to 6.11.0
+
+commit 607717a5cd7a545be4189ca592d7222c7e0b3d7a
+Merge: be7d004 402efda
+Author: delasmanos <149575871+delasmanos@users.noreply.github.com>
+Date:   Thu Nov 16 10:09:34 2023 +0100
+
+    Merge pull request #5 from delasmanos/dependabot/npm_and_yarn/prettier-plugin-astro-0.12.2
+    
+    chore(deps-dev): bump prettier-plugin-astro from 0.12.1 to 0.12.2
+
+commit 402efda202417212cacb670ca80cc49978a8b396
+Author: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>
+Date:   Thu Nov 16 09:08:28 2023 +0000
+
+    chore(deps-dev): bump prettier-plugin-astro from 0.12.1 to 0.12.2
+    
+    Bumps [prettier-plugin-astro](https://github.com/withastro/prettier-plugin-astro) from 0.12.1 to 0.12.2.
+    - [Release notes](https://github.com/withastro/prettier-plugin-astro/releases)
+    - [Changelog](https://github.com/withastro/prettier-plugin-astro/blob/main/CHANGELOG.md)
+    - [Commits](https://github.com/withastro/prettier-plugin-astro/compare/v0.12.1...v0.12.2)
+    
+    ---
+    updated-dependencies:
+    - dependency-name: prettier-plugin-astro
+      dependency-type: direct:development
+      update-type: version-update:semver-patch
+    ...
+    
+    Signed-off-by: dependabot[bot] <support@github.com>
+
+commit be7d004a9dc30fedcc9ad1e5f06724c7424186b5
+Merge: ef09aef bcfca27
+Author: delasmanos <149575871+delasmanos@users.noreply.github.com>
+Date:   Thu Nov 16 10:07:37 2023 +0100
+
+    Merge pull request #4 from delasmanos/dependabot/npm_and_yarn/prettier-plugin-tailwindcss-0.5.7
+    
+    chore(deps-dev): bump prettier-plugin-tailwindcss from 0.5.6 to 0.5.7
+
+commit ef09aef106cffe10f088eab192b938b5ce2ebeae
+Merge: 0148aed b8cb73b
+Author: delasmanos <149575871+delasmanos@users.noreply.github.com>
+Date:   Thu Nov 16 10:07:23 2023 +0100
+
+    Merge pull request #3 from delasmanos/dependabot/npm_and_yarn/rehype-autolink-headings-7.1.0
+    
+    chore(deps-dev): bump rehype-autolink-headings from 7.0.0 to 7.1.0
+
+commit 0148aedbdde6c21e5bd72d9eb131c3c4ee6ab2c8
+Author: Dennis Rintz <dennis.rintz@quentic.com>
+Date:   Wed Nov 15 18:29:21 2023 +0100
+
+    fix: typescript error
+
+commit d6278f222463b1869418706598c685db9d601da6
+Author: Dennis Rintz <dennis.rintz@quentic.com>
+Date:   Wed Nov 15 18:14:55 2023 +0100
+
+    fix: layout props
+
+commit e201481f870e56752a6629a8353091454f33dbd6
+Author: Dennis Rintz <dennis.rintz@quentic.com>
+Date:   Wed Nov 15 17:05:16 2023 +0100
+
+    fix: bg-color
+
+commit a09e36be3ffb00d2a5fbbdc130ff4a00a44bf8d4
+Author: Dennis Rintz <dennis.rintz@quentic.com>
+Date:   Wed Nov 15 17:04:49 2023 +0100
+
+    feat: use sharebuttons and improve readability
+
+commit e631b16c95c47a523344d963be76ef4a1f1b793b
+Author: Dennis Rintz <dennis.rintz@quentic.com>
+Date:   Wed Nov 15 17:03:07 2023 +0100
+
+    feat: a11y paginatioon
+
+commit 083f4a41837efa0e4617973e40d64452e6f4b784
+Author: Dennis Rintz <dennis.rintz@quentic.com>
+Date:   Wed Nov 15 17:02:37 2023 +0100
+
+    fix: socialshare props
+
+commit 29a5b684f44ad38a61c6e6ceddde284c7b092ead
+Author: Dennis Rintz <dennis.rintz@quentic.com>
+Date:   Wed Nov 15 17:01:43 2023 +0100
+
+    fix: better seo title for article
+
+commit 1f3ae8b151c484fe14fd35742440333cb4901ddb
+Author: Dennis Rintz <dennis.rintz@quentic.com>
+Date:   Wed Nov 15 17:01:22 2023 +0100
+
+    feat: social share buttons
+
+commit cb44e2d4278f57f7d04f7c3fe1c53b0759085c3c
+Author: Dennis Rintz <dennis.rintz@quentic.com>
+Date:   Wed Nov 15 17:00:56 2023 +0100
+
+    fix: socialImages
+
+commit 44404ef408bd51b4d7a9d8c7aad71819ca694e33
+Author: Dennis Rintz <dennis.rintz@quentic.com>
+Date:   Wed Nov 15 17:00:39 2023 +0100
+
+    fix: footer link
+
+commit 9a4fd8b84206a6db3c7ae6b9cf30fdd6e5918cb9
+Author: Dennis Rintz <dennis.rintz@quentic.com>
+Date:   Wed Nov 15 13:05:51 2023 +0100
+
+    fix: og tags
+
+commit 41909983c21a4dd34efaf0966b1e7e8c708098ce
+Author: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>
+Date:   Wed Nov 15 11:52:40 2023 +0000
+
+    chore(deps): bump @astrojs/mdx from 1.1.3 to 1.1.5
+    
+    Bumps [@astrojs/mdx](https://github.com/withastro/astro/tree/HEAD/packages/integrations/mdx) from 1.1.3 to 1.1.5.
+    - [Release notes](https://github.com/withastro/astro/releases)
+    - [Changelog](https://github.com/withastro/astro/blob/main/packages/integrations/mdx/CHANGELOG.md)
+    - [Commits](https://github.com/withastro/astro/commits/@astrojs/mdx@1.1.5/packages/integrations/mdx)
+    
+    ---
+    updated-dependencies:
+    - dependency-name: "@astrojs/mdx"
+      dependency-type: direct:production
+      update-type: version-update:semver-patch
+    ...
+    
+    Signed-off-by: dependabot[bot] <support@github.com>
+
+commit 164df15000bc8f775a37469f7da9fa2d7ad65749
+Author: Dennis Rintz <dennis.rintz@quentic.com>
+Date:   Wed Nov 15 12:30:47 2023 +0100
+
+    feat: implement socialImage component
+
+commit 794ab447de1f95a6691f2b165ce454f9fbb2c235
+Author: Dennis Rintz <dennis.rintz@quentic.com>
+Date:   Tue Nov 14 22:21:12 2023 +0100
+
+    fix: getImage works only on prod build
+
+commit 163d91b1104e690354670b08da91e3f1f2393885
+Author: Dennis Rintz <dennis.rintz@quentic.com>
+Date:   Tue Nov 14 21:49:41 2023 +0100
+
+    ^feat: resolve bug with images from frontmatter to optimized url
+
+commit 5df46663cf1a18167abd4f399b7172fc87efe7c6
+Author: Dennis Rintz <dennis.rintz@quentic.com>
+Date:   Tue Nov 14 20:38:07 2023 +0100
+
+    fix: decap config.yml
+
+commit 6d6476b22723f278c6880d1984581471dcb1d6ab
+Author: Dennis Rintz <dennis.rintz@quentic.com>
+Date:   Tue Nov 14 20:00:19 2023 +0100
+
+    feat: new article and 4040 page
+
+commit 678c603abf0fe851774e4ab70ad5017400aa5206
+Author: Dennis Rintz <dennis.rintz@quentic.com>
+Date:   Tue Nov 14 15:34:59 2023 +0100
+
+    fix: styleguide back to md
+
+commit ac5498924329ca4f7549001c8a0e9b54b1e10483
+Merge: 4935b98 9203d7f
+Author: delasmanos <149575871+delasmanos@users.noreply.github.com>
+Date:   Tue Nov 14 15:32:31 2023 +0100
+
+    Merge pull request #10 from delasmanos/author_to_type_content
+    
+    Author to type content
+
+commit 9203d7f8afcc6ffc39295a67d650d6a43805fb0f
+Author: Dennis Rintz <dennis.rintz@quentic.com>
+Date:   Tue Nov 14 15:31:37 2023 +0100
+
+    feat: add merch route
+
+commit 124d7db4654d3116f1c11c51d58bd6e682dd2e97
+Author: Dennis Rintz <dennis.rintz@quentic.com>
+Date:   Tue Nov 14 15:30:48 2023 +0100
+
+    feat: favico
+
+commit 2c3733e72d90d4903b5100864f250010b65dce26
+Author: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>
+Date:   Tue Nov 14 12:10:07 2023 +0000
+
+    chore(deps-dev): bump @typescript-eslint/eslint-plugin
+    
+    Bumps [@typescript-eslint/eslint-plugin](https://github.com/typescript-eslint/typescript-eslint/tree/HEAD/packages/eslint-plugin) from 6.9.1 to 6.11.0.
+    - [Release notes](https://github.com/typescript-eslint/typescript-eslint/releases)
+    - [Changelog](https://github.com/typescript-eslint/typescript-eslint/blob/main/packages/eslint-plugin/CHANGELOG.md)
+    - [Commits](https://github.com/typescript-eslint/typescript-eslint/commits/v6.11.0/packages/eslint-plugin)
+    
+    ---
+    updated-dependencies:
+    - dependency-name: "@typescript-eslint/eslint-plugin"
+      dependency-type: direct:development
+      update-type: version-update:semver-minor
+    ...
+    
+    Signed-off-by: dependabot[bot] <support@github.com>
+
+commit 408538abf378d422133932a0c593e5870938fc27
+Author: Dennis Rintz <dennis.rintz@quentic.com>
+Date:   Tue Nov 14 12:36:26 2023 +0100
+
+    fix: refactor content and config
+
+commit 4d516edd5edf9fdaca028f690cd567166a836ff8
+Author: Dennis Rintz <dennis.rintz@quentic.com>
+Date:   Tue Nov 14 12:35:46 2023 +0100
+
+    feat: new components and utils
+
+commit bcfca277aaf731436ded56a6f5f4e6238cd9993b
+Author: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>
+Date:   Mon Nov 13 15:52:29 2023 +0000
+
+    chore(deps-dev): bump prettier-plugin-tailwindcss from 0.5.6 to 0.5.7
+    
+    Bumps [prettier-plugin-tailwindcss](https://github.com/tailwindlabs/prettier-plugin-tailwindcss) from 0.5.6 to 0.5.7.
+    - [Release notes](https://github.com/tailwindlabs/prettier-plugin-tailwindcss/releases)
+    - [Changelog](https://github.com/tailwindlabs/prettier-plugin-tailwindcss/blob/main/CHANGELOG.md)
+    - [Commits](https://github.com/tailwindlabs/prettier-plugin-tailwindcss/compare/v0.5.6...v0.5.7)
+    
+    ---
+    updated-dependencies:
+    - dependency-name: prettier-plugin-tailwindcss
+      dependency-type: direct:development
+      update-type: version-update:semver-patch
+    ...
+    
+    Signed-off-by: dependabot[bot] <support@github.com>
+
+commit b8cb73b8143a0d7ca8770a1673ba153c17381814
+Author: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>
+Date:   Mon Nov 13 15:52:20 2023 +0000
+
+    chore(deps-dev): bump rehype-autolink-headings from 7.0.0 to 7.1.0
+    
+    Bumps [rehype-autolink-headings](https://github.com/rehypejs/rehype-autolink-headings) from 7.0.0 to 7.1.0.
+    - [Release notes](https://github.com/rehypejs/rehype-autolink-headings/releases)
+    - [Commits](https://github.com/rehypejs/rehype-autolink-headings/compare/7.0.0...7.1.0)
+    
+    ---
+    updated-dependencies:
+    - dependency-name: rehype-autolink-headings
+      dependency-type: direct:development
+      update-type: version-update:semver-minor
+    ...
+    
+    Signed-off-by: dependabot[bot] <support@github.com>
+
+commit 4935b98505fedc023013d0f0b8c80824da76ec95
+Author: delasmanos <149575871+delasmanos@users.noreply.github.com>
+Date:   Mon Nov 13 16:51:55 2023 +0100
+
+    Update dependabot.yml
+
+commit c52d21f20978ca2bdb26f3ceb77c31b12c618758
+Merge: 43d56d9 a2d2dcc
+Author: delasmanos <149575871+delasmanos@users.noreply.github.com>
+Date:   Mon Nov 13 16:40:32 2023 +0100
+
+    Merge pull request #2 from delasmanos/cleanup
+    
+    Cleanup
+
+commit a2d2dcc7a87ed545ca28528dba05b6f03d007a35
+Author: Dennis Rintz <dennis.rintz@quentic.com>
+Date:   Mon Nov 13 16:38:45 2023 +0100
+
+    feat: default filter collection helper, remove comments
+
+commit 518614acb4200187b0f63ac23d5161b50aed536f
+Author: Dennis Rintz <dennis.rintz@quentic.com>
+Date:   Mon Nov 13 16:38:13 2023 +0100
+
+    fix: footer style
+
+commit 2ccd89457153cff921dbd6b9bf54d9f301447b22
+Author: Dennis Rintz <dennis.rintz@quentic.com>
+Date:   Mon Nov 13 16:21:24 2023 +0100
+
+    fix: colors and default theme
+
+commit 9872d926353bd6f2d9095337322e45a0bc01d7bb
+Author: Dennis Rintz <dennis.rintz@quentic.com>
+Date:   Mon Nov 13 16:21:04 2023 +0100
+
+    feat: subtitle in frontmatter
+
+commit eb3fdfdebe6bc3e8662f174c522e8c15dbf5d5c7
+Author: Dennis Rintz <dennis.rintz@quentic.com>
+Date:   Mon Nov 13 16:20:33 2023 +0100
+
+    feat: accesible blogheading with subtitles
+
+commit 43d56d960177933cbeb1d1072e6a5509a7bd2b65
+Author: Dennis Rintz <dennis.rintz@quentic.com>
+Date:   Mon Nov 13 15:35:45 2023 +0100
+
+    fix: uncomment correct filter condition
+
+commit 634be778ff6e7a534bcda143e6308f00ff463bca
+Author: Dennis Rintz <dennis.rintz@quentic.com>
+Date:   Mon Nov 13 15:28:13 2023 +0100
+
+    fix: typecheck on build, remove console logs
+
+commit 408de7fd0b917d0c57577c5ff0213b7c3de4deab
+Author: Dennis Rintz <dennis.rintz@quentic.com>
+Date:   Mon Nov 13 15:23:02 2023 +0100
+
+    fix: mobile first style, published field for posts
+
+commit dbf1d66d2a6ad29e6326f9897fc3e73406994fbb
+Author: Dennis Rintz <dennis.rintz@quentic.com>
+Date:   Mon Nov 13 12:29:17 2023 +0100
+
+    fix: inline ident widget script
+
+commit d76883c62797784970ccab1a3e1cd3efc3e0be8f
+Author: Dennis Rintz <dennis.rintz@quentic.com>
+Date:   Mon Nov 13 12:25:15 2023 +0100
+
+    fix: add netlify identity to index so invites work
+
+commit 0d47e045336279f1c1d31aec9bf29dd08132abbb
+Author: Dennis Rintz <dennis.rintz@quentic.com>
+Date:   Mon Nov 13 11:57:04 2023 +0100
+
+    fix: decap backend setting
+
+commit f611796033d42e012da6e7293a5993bf9bb60946
+Author: Dennis Rintz <dennis.rintz@quentic.com>
+Date:   Mon Nov 13 11:51:50 2023 +0100
+
+    feat: netlify ident
+
+commit ff3d48c3985d1ae482bd0b7f3c041540cf690a5c
+Author: Dennis Rintz <dennis.rintz@quentic.com>
+Date:   Mon Nov 13 11:32:54 2023 +0100
+
+    fix: settings schema
+
+commit b59f3b4b91b5fea8f03ea081430d6f66474b3c30
+Merge: ce006fc 30b25f5
+Author: Dennis Rintz <dennis.rintz@quentic.com>
+Date:   Mon Nov 13 11:30:12 2023 +0100
+
+    Merge branch 'main' of https://github.com/delasmanos/gnublog
+
+commit ce006fccaf0c6e7eb6a077696e46c0e22deecd6d
+Author: Dennis Rintz <dennis.rintz@quentic.com>
+Date:   Mon Nov 13 11:30:01 2023 +0100
+
+    fix: cleanup
+
+commit 30b25f52a70566fae69d9910357b499975ab72be
+Merge: c896ec6 b4768ba
+Author: delasmanos <149575871+delasmanos@users.noreply.github.com>
+Date:   Mon Nov 13 11:15:22 2023 +0100
+
+    Merge pull request #1 from delasmanos/cms/blog/vocal-eq
+    
+    Update BlogMD “vocal-eq”
+
+commit b4768ba125aa6a49b8ac38eebefe90cc0ebc992b
+Author: delasmanos <149575871+delasmanos@users.noreply.github.com>
+Date:   Mon Nov 13 11:08:43 2023 +0100
+
+    Update BlogMD “vocal-eq”
+
+commit c896ec6295fc4f17a2c58fa02cb96588c75c50f5
+Author: Dennis Rintz <dennis.rintz@quentic.com>
+Date:   Mon Nov 13 11:07:37 2023 +0100
+
+    fix: rssfeed, types, and build, improve lighthouse
+
+commit 1321f6b7f2a8fe76427778002ba031962f14f88b
+Author: Dennis Rintz <dennis.rintz@quentic.com>
+Date:   Mon Nov 13 10:06:00 2023 +0100
+
+    fix: use base_url
+
+commit 990b64dbd68c29a94b87319514c6a9e11b9db698
+Author: Dennis Rintz <dennis.rintz@quentic.com>
+Date:   Sun Nov 12 19:20:49 2023 +0100
+
+    fix: EEENV
+
+commit f736819a1a559daac252738a918374162c92a301
+Author: Dennis Rintz <dennis.rintz@quentic.com>
+Date:   Sun Nov 12 19:19:10 2023 +0100
+
+    fix: ENV
+
+commit f759e783d018c30c5bf948ca5553edb3441b2135
+Author: Dennis Rintz <dennis.rintz@quentic.com>
+Date:   Sun Nov 12 19:15:36 2023 +0100
+
+    fix: secret env?
+
+commit 8bb2b01aa0ca54b584b1dafdf78fe302f726ed14
+Author: Dennis Rintz <dennis.rintz@quentic.com>
+Date:   Sun Nov 12 19:12:27 2023 +0100
+
+    fix: env vars
+
+commit 97a9e626c4f781364a3ebd3cce1ebde34779f238
+Author: Dennis Rintz <dennis.rintz@quentic.com>
+Date:   Sun Nov 12 19:06:04 2023 +0100
+
+    fix: add env var to deploy.yml
+
+commit c5a5f8ced31d84ffe1abb066bef3e1da670e8b16
+Author: Dennis Rintz <dennis.rintz@quentic.com>
+Date:   Sun Nov 12 19:00:50 2023 +0100
+
+    fix: add todo
+
+commit 28caead64516371daacc93129f8efca39edb7e9a
+Author: Dennis Rintz <dennis.rintz@quentic.com>
+Date:   Sun Nov 12 18:57:04 2023 +0100
+
+    fix: use env vars
+
+commit 20b73bd65cb6e27dcbad02677b59a69e3f6b2130
+Author: Dennis Rintz <dennis.rintz@quentic.com>
+Date:   Sun Nov 12 17:55:45 2023 +0100
+
+    fix: wrong links
+
+commit 907ac08d755c7c986f100352e973bfa29dbd9f3e
+Author: Dennis Rintz <dennis.rintz@quentic.com>
+Date:   Sun Nov 12 16:26:33 2023 +0100
+
+    fix: config again
+
+commit c33ab775dff7d6fa3482e1dd455ebc8da3b5c31f
+Author: Dennis Rintz <dennis.rintz@quentic.com>
+Date:   Sun Nov 12 16:19:43 2023 +0100
+
+    fix: base
+
+commit b736675bd1a443692e6ea7a252bec4a857735366
+Author: Dennis Rintz <dennis.rintz@quentic.com>
+Date:   Sun Nov 12 16:12:26 2023 +0100
+
+    fix: prod and dev url links
+
+commit af0476462e23980a6f806679bf624e4bae28e7b6
+Author: Dennis Rintz <dennis.rintz@quentic.com>
+Date:   Sun Nov 12 15:37:39 2023 +0100
+
+    fix: prefix link
+
+commit 2d7ca33296f17489f6af7ae80d4afc1b92d6aaa6
+Author: Dennis Rintz <dennis.rintz@quentic.com>
+Date:   Sun Nov 12 15:19:45 2023 +0100
+
+    fix: site conf
+
+commit 16004ed2f88f88ce568fb167146fbce80cc8ba9e
+Author: Dennis Rintz <dennis.rintz@quentic.com>
+Date:   Sun Nov 12 15:12:58 2023 +0100
+
+    chore: try publish
+
+commit 77c3d4b29843afb3b942c4b2baafaacf3778eeb4
+Author: Dennis Rintz <dennis.rintz@quentic.com>
+Date:   Sun Nov 12 14:01:48 2023 +0100
+
+    fix: a lot
+
+commit bff2638690a079a3aca8bf2b3c67284e673ca590
+Author: Dennis Rintz <dennis.rintz@quentic.com>
+Date:   Sat Nov 11 23:20:39 2023 +0100
+
+    feat: bandmates overview and details
+
+commit 7532dd5db31e837add420b7c7e7de568bc161961
+Author: Dennis Rintz <dennis.rintz@quentic.com>
+Date:   Sat Nov 11 23:20:19 2023 +0100
+
+    fix: home page
+
+commit 5762c968f1933563d3e377f2dd93f686a5c161d9
+Author: Dennis Rintz <dennis.rintz@quentic.com>
+Date:   Sat Nov 11 23:19:16 2023 +0100
+
+    feat: add dark mode for poor people
+
+commit 56d87a13e4c1252f81f7901c0d028f62224aa9e2
+Author: Dennis Rintz <dennis.rintz@quentic.com>
+Date:   Sat Nov 11 23:16:40 2023 +0100
+
+    feat: define content collection and ad content
+
+commit 019bf4129c182266e3ed1b095e1ecb30f1f9e944
+Author: Dennis Rintz <dennis.rintz@quentic.com>
+Date:   Thu Nov 9 09:29:35 2023 +0100
+
+    docs: refine README
+
+commit d32486a451e084537de51117b61900dad84c3aef
+Author: Dennis Rintz <dennis.rintz@quentic.com>
+Date:   Thu Nov 9 09:29:13 2023 +0100
+
+    feat: add tree command and ignore the output
+
+commit d4ac7df89f5395b508d2a6e455f5a8ea8e77ebfc
+Author: Dennis Rintz <dennis.rintz@quentic.com>
+Date:   Thu Nov 9 09:05:03 2023 +0100
+
+    copy src from my template project and implemnt layout and blog funcionality
