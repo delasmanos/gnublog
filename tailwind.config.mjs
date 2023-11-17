@@ -9,7 +9,8 @@ export default {
 				gnutrast:{ DEFAULT: "var(--blue-munsell)", light: "var(--blue-munsell-light)"},
 				gnurange:{ DEFAULT: "var(--chili-red)", light: "var(--chili-red-light)"},
 				gnuyellow:{ DEFAULT: "var(--gamboge)", light: "var(--gamboge-light)"},
-				gnudark:{ DEFAULT: "var(--dark-blue)"},
+				gnudark: { DEFAULT: "var(--dark-blue)"},
+				"gnu-bg": { DEFAULT: "var(--bg-light)"},
 			}
 		},
 	},
