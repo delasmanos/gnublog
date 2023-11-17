@@ -1,7 +1,7 @@
 /* The integration's default injected base.css file */
 @tailwind base;
 @tailwind components;
-@tailwind utilities;
+@tailwind utilities; 
 
 :root {
 	--beaver: hsla(16, 23%, 51%, 1);
@@ -14,4 +14,17 @@
 	--blue-munsell: hsl(190, 42%, 40%);
 	--blue-munsell-light: hsl(190, 50%, 60%);
 	/* --gnurange: "#ff4400" */
+}
+.visually-hidden {
+	/* See: https://github.com/twbs/bootstrap/blob/master/scss/mixins/_screen-reader.scss */
+	position: absolute;
+	border: 0;
+	width: 1;
+	height: 1;
+	padding: 0;
+	margin: -1;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
+	word-wrap: normal;
 }
