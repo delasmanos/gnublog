@@ -19,7 +19,8 @@ export const postSchema = ({ image }: SchemaContext) =>
     showToc: z.boolean().optional(),
     relatedPosts: z.array(reference("blog")).optional(),
     author: reference("band-mates").optional(),
-    tags: z.enum(["article", "music-production"]).default("article"),
+    tags: z.enum(["article", "music-production", "coding"]).default("article"),
+    published: z.boolean(),
   });
 const bandMateSchema = ({ image }: SchemaContext) =>
   z.object({

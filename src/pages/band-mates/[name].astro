@@ -4,6 +4,7 @@ import { getCollection, type CollectionEntry } from "astro:content";
 import DocumentLayout from "layouts/DocumentLayout.astro";
 import BackLink from "~components/BackLink.astro";
 import Link from "~components/Link.astro";
+import { getPublishedPosts } from "~util/collection-helper";
 import { slugify } from "~util/slugify";
 
 export async function getStaticPaths() {
@@ -16,15 +17,25 @@ export async function getStaticPaths() {
 type Props = CollectionEntry<"band-mates">;
 
 const a = Astro.props;
-const postsByAuthor = await getCollection("blog", (entry) =>
+const postsByAuthor = await getPublishedPosts("latest-first", (entry) =>
   entry.data.author ? entry.data.author.id === a.id : false,
 );
 ---
 
-<DocumentLayout title={`About ${a.data.name}`} description={`${a.data.aboutMe}`}>
+<DocumentLayout
+  title={`About ${a.data.name}`}
+  description={`${a.data.aboutMe}`}
+>
   <div class="flex justify-center">
-    <div class="px-16 py-20 md:px-6">
+    <div
+      class="flex flex-col items-center justify-center px-4 py-20 sm:px-16 md:px-6"
+    >
       <div class="mate-card relative">
+        <BackLink
+          class="absolute right-4 top-6 z-50 flex h-9 w-9 items-center justify-center rounded-full bg-gnurange text-[.5rem] text-white"
+        >
+          back
+        </BackLink>
         <div
           class="mate-name absolute bottom-10 z-20 -rotate-12"
           transition:name="band-mate-avatar"
@@ -32,7 +43,7 @@ const postsByAuthor = await getCollection("blog", (entry) =>
         >
           <h2
             style={{ "text-shadow": "4px 4px var(--chili-red)" }}
-            class="mb-0 select-none text-[5rem] font-bold text-white drop-shadow-md hover:text-gnurange-light md:bottom-24 md:text-[6rem] lg:text-[7rem] xl:text-[8rem]"
+            class="mb-0 select-none text-[4rem] font-bold text-white drop-shadow-md hover:text-gnurange-light sm:text-[5rem] md:bottom-24 md:text-[6rem] lg:text-[7rem] xl:text-[8rem]"
           >
             {a.data.name}
           </h2>
@@ -46,45 +57,45 @@ const postsByAuthor = await getCollection("blog", (entry) =>
 
         <div
           id="image-crop"
-          class="relative max-w-full overflow-hidden rounded-full object-bottom outline-dashed outline-offset-8 outline-white dark:outline-gnurange"
+          class:list={[
+            "relative h-[16rem] w-[16rem] max-w-full  overflow-hidden rounded-full object-bottom outline-dashed outline-offset-8 outline-white dark:outline-gnurange",
+            "sm:h-[22rem] sm:w-[22rem] md:h-[32rem] md:w-[32rem] ",
+          ]}
         >
           <Image
-            class="h-[22rem] w-[22rem] object-none object-center outline-dashed outline-offset-8 outline-gnutrast-light drop-shadow-xl dark:outline-gnurange-light md:h-[28rem] md:w-[28rem] lg:h-[32rem] lg:w-[32rem]"
+            class="object-center outline-dashed"
             src={a.data.avatar}
             alt={a.data.name}
           />
         </div>
       </div>
-      <div class="info mt-4 flex items-start">
-        <dl class="flex flex-col text-slate-600 drop-shadow-md dark:text-white">
+      <div class="info mt-4 flex flex-row items-start self-start">
+        <dl
+          class="flex flex-col text-slate-600 drop-shadow-md dark:text-white sm:text-2xl"
+        >
           <div class="flex flex-row">
-            <dt class="text-2xl font-bold">Member since:</dt>
-            <dd class="pl-2 text-2xl font-bold text-white">
+            <dt class="font-bold">Member since:</dt>
+            <dd class="pl-2 font-bold text-white">
               {a.data.memberSince}
             </dd>
           </div>
           <>
             <div class="flex flex-row">
-              <dt class="text-2xl font-bold">Postion:</dt>
-              <dd class="pl-2 text-2xl font-bold text-white">
+              <dt class="font-bold">Postion:</dt>
+              <dd class="pl-2 font-bold text-white">
                 {a.data.postion}
               </dd>
             </div>
             <div class="flex flex-row">
-              <dt class="text-2xl font-bold">Nickname:</dt>
-              <dd class="pl-2 text-2xl font-bold text-white">
+              <dt class="font-bold">Nickname:</dt>
+              <dd class="pl-2 font-bold text-white">
                 {a.data.nickName}
               </dd>
             </div>
           </>
         </dl>
-        <BackLink
-          class="ml-auto flex h-16 w-16 items-center justify-center rounded-full bg-gnurange text-white"
-        >
-          back
-        </BackLink>
       </div>
-      <div class="text-white">
+      <div class="self-start text-white">
         <h2 class="mt-4 text-2xl">About me</h2>
         <p>{a.data.aboutMe}</p>
       </div>
