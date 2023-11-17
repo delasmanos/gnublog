@@ -4,6 +4,9 @@ import { getCollection, type CollectionEntry } from "astro:content";
 import DocumentLayout from "layouts/DocumentLayout.astro";
 import BackLink from "~components/BackLink.astro";
 import Link from "~components/Link.astro";
+import MdContainer from "~components/MdContainer.astro";
+import PostList from "~components/PostList.astro";
+import Separator from "~components/Separator.astro";
 import { getPublishedPosts } from "~util/collection-helper";
 import { slugify } from "~util/slugify";
 
@@ -17,14 +20,15 @@ export async function getStaticPaths() {
 type Props = CollectionEntry<"band-mates">;
 
 const a = Astro.props;
+const { Content } = await a.render();
 const postsByAuthor = await getPublishedPosts("latest-first", (entry) =>
-  entry.data.author ? entry.data.author.id === a.id : false,
+  entry.data.author ? entry.data.author.slug === a.slug : false,
 );
 ---
 
 <DocumentLayout
   title={`About ${a.data.name}`}
-  description={`${a.data.aboutMe}`}
+  description={`Bio of ${a.data.name}`}
 >
   <div class="flex justify-center">
     <div
@@ -69,7 +73,10 @@ const postsByAuthor = await getPublishedPosts("latest-first", (entry) =>
           />
         </div>
       </div>
-      <div class="info mt-4 flex flex-row items-start self-start">
+
+      <div
+        class="info mt-4 flex w-full flex-row items-start self-start pb-2 dark:border-gnurange"
+      >
         <dl
           class="flex flex-col text-slate-600 drop-shadow-md dark:text-white sm:text-2xl"
         >
@@ -95,22 +102,22 @@ const postsByAuthor = await getPublishedPosts("latest-first", (entry) =>
           </>
         </dl>
       </div>
-      <div class="self-start text-white">
-        <h2 class="mt-4 text-2xl">About me</h2>
-        <p>{a.data.aboutMe}</p>
-      </div>
+      <Separator class="my-4" />
+
+      <MdContainer
+        class="prose-h1:gnu-shadow prose prose-xl mt-4 self-start dark:prose-invert prose-h1:text-slate-100 dark:prose-h1:text-slate-100"
+      >
+        <Content />
+      </MdContainer>
+      <Separator class="my-4" />
       {
         postsByAuthor.length > 0 && (
-          <div class="prose dark:prose-invert">
-            <h2 class="mt-4 text-2xl font-bold text-gnurange">Posts by me: </h2>
-            <ul class="text-slate-900 dark:text-slate-100">
-              {postsByAuthor.map((p) => (
-                <li>
-                  <Link href={`/blog/${p.slug}`}> {p.data.title}</Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+          <>
+            <h2 class="gnu-shadow mb-4 self-start text-2xl text-slate-100">
+              Post written by me:
+            </h2>
+            <PostList posts={postsByAuthor} />
+          </>
         )
       }
     </div>
