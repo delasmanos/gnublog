@@ -12,6 +12,7 @@ const isRoot = href === "/";
 const isSub = !isRoot && pathname.includes(href?.toString() ?? "");
 const isActive =
   href === pathname || href === pathname.replace(/\/$/, "") || isSub;
+//TODO Why typescript complains IntrisnsicAttributes when using class:list
 ---
 
 <Link
