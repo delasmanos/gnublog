@@ -3,9 +3,9 @@ name: Christoph
 nickName: Blesshuhn
 postion: Drumz
 memberSince: beginning
-avatar: "./christoph.jpg"
+avatar: ./christoph.jpg
 ---
 
 ## About me
 
-I like playing drums and Dad jokes
+From the villages of the south-west I bring you sounds an noises.
