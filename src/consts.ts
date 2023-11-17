@@ -4,5 +4,5 @@
 export const SITE_TITLE = "GNU.band";
 // needed to work on github pages
 export const LINK_PREFIX =
-  import.meta.env.MODE === "production" ? "gnublog" : "";
+  import.meta.env.MODE === "production" ? "/gnublog" : "";
 export const SITE_DESCRIPTION = "We are GNU a band from Berlin";
