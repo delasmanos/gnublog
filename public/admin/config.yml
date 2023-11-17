@@ -28,7 +28,6 @@ collections:
       - { name: heroImageAltText, label: Hero image alt text }
       - { name: showHeadingPermalink, label: Show Permalinks in headings, widget: "boolean" }
       - { name: showToc, label: Show Table of contents, widget: "boolean" }
-      - { name: tags, label: Tags one of "article" "music-production" "coding",  widget: "string" }
       - { name: published, label: Mark as published,  widget: "boolean" }
       - { label: 'Blog post content', name: 'body', widget: 'markdown' }
       - label: "Author"
@@ -39,6 +38,13 @@ collections:
           - { label: "Christoph", value: "christoph" }
           - { label: "Daniel Funki Funk", value: "daniel" }
           - { label: "Benno", value: "benno" }
+      - label: "Tags"
+        name: "tags"
+        widget: "select"
+        options:
+          - { label: "article", value: "article" }
+          - { label: "music-production", value: "music-production" }
+          - { label: "coding", value: "coding" }
 
   - name: band-mates
     label: bandmates
