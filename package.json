@@ -6,7 +6,7 @@
     "dev": "astro dev",
     "start": "astro dev",
     "typecheck": "astro check",
-    "build": "astro build",
+    "build": "astro check && astro build",
     "build:pack": "astro check && astro build && jampack ./dist",
     "preview": "astro preview",
     "astro": "astro",
