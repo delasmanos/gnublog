@@ -1,7 +1,7 @@
 backend:
   name: github
   api_root: https://api.github.com
-  repo: delasmanos/astro-cms-starter #replace with your githu repo
+  repo: delasmanos/gnublog #replace with your githu repo
   branch: main
   squash_merges: true
   open_authoring: true
@@ -9,7 +9,7 @@ backend:
 publish_mode: editorial_workflow
 media_folder: public/images
 public_folder: /images
-site_url: "http://localhost:4321/" # your site name
+site_url: "https://delasmanos.github.io/gnublog/" # your site name
 
 collections:
   - name: post

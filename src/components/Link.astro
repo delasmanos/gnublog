@@ -5,7 +5,7 @@ import { LINK_PREFIX } from "consts";
 export type Props = HTMLAttributes<"a"> & AstroBuiltinAttributes;
 const { href, ...rest } = Astro.props;
 const augHref = `${LINK_PREFIX}${href}`;
-console.log(augHref);
+console.log("augHref", augHref);
 ---
 
 <a href={augHref} {...rest}><slot /></a>
