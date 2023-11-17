@@ -1,12 +1,13 @@
 ---
 import type { CSSProperty } from "astro/types";
-import {
-  Image,
-  type LocalImageProps,
-  type RemoteImageProps,
-} from "astro:assets";
-
-export type Props = (LocalImageProps | RemoteImageProps) & {
+// import {
+//   Image,
+//   type LocalImageProps,
+//   type RemoteImageProps,
+// } from "astro:assets";
+import type { CollectionEntry } from "astro:content";
+type I = CollectionEntry<"blog">["data"]["heroImage"];
+export type Props = I & {
   size?: CSSProperty;
   imagePositon?:
     | "object-left-top"
@@ -32,8 +33,7 @@ const classes = [
   "object-right-bottom",
 ];
 
-const { imagePositon, size, ...imageProps } = Astro.props satisfies Props;
-console.log("propop", Astro.props);
+const { imagePositon, size, ...rest } = Astro.props satisfies Props;
 const objectClass = imagePositon
   ? classes.find((e) => e === imagePositon)
   : "center";
@@ -48,11 +48,5 @@ const dimension = size ? size : "40rem";
   }}
   class="relative max-w-full overflow-hidden rounded-full object-bottom"
 >
-  <Image
-    {...imageProps}
-    class:list={[
-      "object-none outline-dashed  outline-offset-8 outline-gnutrast-light drop-shadow-xl dark:outline-gnurange-light",
-      objectClass,
-    ]}
-  />
+  <!-- <Image {...rest} /> -->
 </div>
