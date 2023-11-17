@@ -1,0 +1,15 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+export type Props = HTMLAttributes<"li">;
+const props = Astro.props;
+---
+
+<li
+  class:list={[
+    "text-base uppercase text-gray-700 underline-offset-4 transition-all duration-150 hover:text-teal-300 hover:underline ",
+  ]}
+  {...props}
+>
+  <slot />
+</li>

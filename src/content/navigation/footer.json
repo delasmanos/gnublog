@@ -1,0 +1,18 @@
+[
+  {
+    "displayName":"DATENSCHUTZ",
+    "path":"/datenschutz"
+  },
+  {
+    "displayName":"IMPRESSUM",
+    "path":"/impressum"
+  },
+  {
+    "displayName":"KONTAKT",
+    "path":"/kontakt"
+  },
+  {
+    "displayName":"SITEMAP",
+    "path":"/sitemap.xml"
+  }
+]

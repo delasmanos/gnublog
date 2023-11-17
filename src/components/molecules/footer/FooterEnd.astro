@@ -1,0 +1,20 @@
+---
+import { uniqueDomId } from "-util/id";
+
+const today = new Date();
+---
+
+<div
+  id={uniqueDomId(`footer-end`)}
+  class="mx-auto w-full border-t-2 border-solid border-white bg-slate-200 p-4 text-center"
+>
+  Copyright © <span id="get-current-year">{today}</span>
+  <a
+    href={"/"}
+    class="text-blueGray-500 hover:text-gray-800"
+    target="_blank"
+    rel="noreferrer"
+  >
+    &nbsp;<slot />
+  </a>
+</div>

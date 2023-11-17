@@ -1,0 +1,26 @@
+{
+  "siteName":"KJP Struth",
+  "domain":"kjp-struth.de",
+  "brandSlogan": "Psychotherapie für Kinder und Jugendliche",
+  "email":"info@kjp-struth.de",
+  "telephone":{
+    "prefix":"+49177",
+    "number":"9198964"
+  },
+  "address":{
+    "street":"Pestalozzistraße 19A",
+    "zip":"12623 Berlin"
+  },
+  "officeHours":[
+    {
+      "time":"9:00 - 10:00 Uhr",
+      "day":"Freitag"
+    }
+  ],
+  "telephoneHours":[
+    {
+      "time":"9:00 - 10:00 Uhr",
+      "day":"Freitag"
+    }
+  ]
+}
