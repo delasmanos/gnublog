@@ -1,0 +1,26 @@
+---
+import type { HTMLAttributes } from "astro/types";
+import type { CollectionEntry } from "astro:content";
+import { extractAndMergeClasslistFromProps } from "~util/merge-class-list";
+type FrontmatterProps = Pick<
+  CollectionEntry<"blog">["data"],
+  "showHeadingPermalink"
+>;
+type Props = HTMLAttributes<"article"> & FrontmatterProps;
+const { showHeadingPermalink = false, ...props } = Astro.props;
+
+const clsList = extractAndMergeClasslistFromProps(props, {
+  "no-permalink": !showHeadingPermalink,
+});
+---
+
+<article {...props} class:list={clsList}><slot /></article>
+
+<style>
+  :global(article.no-permalink a.autolinked-heading) {
+    display: none !important;
+  }
+  :global(a.autolinked-heading) {
+    text-decoration: none;
+  }
+</style>

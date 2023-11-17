@@ -30,11 +30,10 @@ const bandMateSchema = ({ image }: SchemaContext) =>
     postion: z.string(),
     avatar: image(),
     memberSince: z.union([z.coerce.date(), z.string()]).optional(),
-    aboutMe: z.string(),
   });
 
 const bandMates = defineCollection({
-  type: "data",
+  type: "content",
   schema: bandMateSchema,
 });
 const blog = defineCollection({

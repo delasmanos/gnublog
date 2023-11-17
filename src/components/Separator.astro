@@ -1,0 +1,12 @@
+---
+import type { HTMLAttributes } from "astro/types";
+import { extractAndMergeClasslistFromProps } from "~util/merge-class-list";
+type Props = HTMLAttributes<"hr">;
+
+const props = Astro.props;
+const classList = extractAndMergeClasslistFromProps(props);
+---
+
+<hr
+  class={`not-prose w-full border-t-[1px] border-t-gnutrast dark:border-t-gnurange ${classList}`}
+/>
