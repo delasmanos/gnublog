@@ -4,6 +4,7 @@ description: "A good rehearsal needs some soft rules to be fun. This is a list o
 heroImage: "./chaos-rehearsal-3.jpg"
 heroImageAltText: sdsdf
 pubDate: Nov 11 2023
+author: delasmanos
 ---
 
 You know how it is, you meet up for a rehearsal, chat first, build up slowly, one of you might even play a tune to check if he's "in tune"...

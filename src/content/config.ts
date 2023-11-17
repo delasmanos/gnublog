@@ -1,5 +1,11 @@
-import { defineCollection, z } from "astro:content";
-export const postSchema = ({ image }) =>
+import {
+  defineCollection,
+  z,
+  type SchemaContext,
+  reference,
+} from "astro:content";
+
+export const postSchema = ({ image }: SchemaContext) =>
   z.object({
     title: z.string(),
     description: z.string(),
@@ -11,20 +17,28 @@ export const postSchema = ({ image }) =>
     minutesRead: z.string().optional(),
     showHeadingPermalink: z.boolean().optional(),
     showToc: z.boolean().optional(),
+    relatedPosts: z.array(reference("blog")).optional(),
+    author: reference("band-mates").optional(),
+    tags: z.enum(["article", "music-production"]).default("article"),
   });
+const bandMateSchema = ({ image }: SchemaContext) =>
+  z.object({
+    name: z.string(),
+    nickName: z.string(),
+    postion: z.string(),
+    avatar: image(),
+    memberSince: z.union([z.coerce.date(), z.string()]).optional(),
+    aboutMe: z.string(),
+  });
+
+const bandMates = defineCollection({
+  type: "data",
+  schema: bandMateSchema,
+});
 const blog = defineCollection({
   // Type-check frontmatter using a schema
   schema: postSchema,
 });
-
-// const page = defineCollection({
-//   schema: z.object({
-//     title: z.string(),
-//     description: z.string(),
-//     subTitle: z.string().optional(),
-//     heroImage: z.string().optional(),
-//   }),
-// });
 
 const settings = defineCollection({
   type: "data",
@@ -55,12 +69,20 @@ const settings = defineCollection({
     ),
   }),
 });
+
 const NavItemSchema = z.object({
   displayName: z.string(),
   path: z.string(),
 });
+
 const navigation = defineCollection({
   type: "data",
   schema: z.array(NavItemSchema),
 });
-export const collections = { blog, settings, navigation };
+
+export const collections = {
+  blog,
+  settings,
+  navigation,
+  "band-mates": bandMates,
+};
