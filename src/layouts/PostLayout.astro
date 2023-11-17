@@ -7,6 +7,7 @@ import BlogSubTitle from "~components/BlogSubTitle.astro";
 import BaseHead from "../components/BaseHead.astro";
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
+import BlogHeading from "~components/BlogHeading.astro";
 
 type Props = CollectionEntry<"blog">["data"] & {
   minutesToRead: ReadTimeResults;
@@ -23,6 +24,7 @@ const {
   minutesToRead,
   showHeadingPermalink,
   writtenBy,
+  subTitle,
 } = Astro.props;
 ---
 
@@ -97,46 +99,47 @@ const {
       ]}
     >
       <article
-        class="prose prose-sm prose-zinc mx-auto max-w-4xl px-4 pt-20 dark:prose-invert md:prose-xl prose-h1:text-gnurange"
+        class="prose-h1:text-gnudark prose prose-sm prose-zinc mx-auto max-w-4xl px-4 pt-20 dark:prose-invert md:prose-xl prose-h1:mb-0 dark:prose-h1:text-gnurange"
       >
         <div class="hero-image">
           {
             heroImage && (
               <Image
-                class="h-48 w-full rounded-xl object-cover"
+                style={{ marginBottom: "1em" }}
+                class="mb-0 h-48 w-full rounded-xl object-cover"
                 width={1020}
-                height={510}
+                height={200}
                 src={heroImage}
                 alt={heroImageAltText ?? "image"}
               />
             )
           }
         </div>
-        <div class="">
-          <div class="">
-            <div class="flex flex-col">
-              <BlogSubTitle
-                pubDate={pubDate}
-                updatedDate={updatedDate}
-                writtenBy={writtenBy}
-                minutesToRead={minutesToRead}
-              />
-              <h1 class="mb-0">{title}</h1>
-              <hr class="not-prose mb-2 mt-0 border-t-gnurange" />
-            </div>
-            <slot />
-          </div>
+        <div class="flex flex-col">
+          <BlogSubTitle
+            pubDate={pubDate}
+            updatedDate={updatedDate}
+            writtenBy={writtenBy}
+            minutesToRead={minutesToRead}
+          />
+          <hr class="not-prose mb-2 mt-0 border-t-gnurange" />
+          <BlogHeading>
+            {title}
+            {subTitle && <Fragment slot="subTitle">{subTitle}</Fragment>}
+          </BlogHeading>
+          <hr class="not-prose mb-2 mt-0 border-t-gnurange" />
+          <slot />
         </div>
       </article>
-    </main>
-    <Footer />
-    <style>
-      /* :global(p:first-of-type::first-letter) {
+      <Footer />
+      <style>
+        /* :global(p:first-of-type::first-letter) {
         float: left;
         font-size: 4rem;
         line-height: 4rem;
         padding-right: 0.5rem;
       } */
-    </style>
+      </style>
+    </main>
   </body>
 </html>

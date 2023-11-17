@@ -29,7 +29,7 @@ export const buttonId = uniqueDomId("theme-toggle");
 <script define:vars={{ buttonId }}>
   const themeToggle = document.getElementById(buttonId);
 
-  const getTheme = () => localStorage.getItem("theme") || "light";
+  const getTheme = () => localStorage.getItem("theme") || "dark";
 
   const setTheme = (theme) => {
     if (theme === "light") {
