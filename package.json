@@ -10,7 +10,8 @@
     "preview": "astro preview",
     "astro": "astro",
     "lint": "prettier --write  \"**/*.{js,jsx,ts,tsx,md,mdx,astro}\" && eslint --fix \"src/**/*.{js,ts,jsx,tsx,astro}\"",
-    "lighthouse": "http-server \"./dist\""
+    "lighthouse": "http-server \"./dist\"",
+    "dir-tree": "tree -I 'node_modules|cache|test_*|*.html|*.astro|*.md|*.mdx|*.jpg|dist' > directory-structure.txt"
   },
   "dependencies": {
     "@astrojs/check": "^0.3.0",
