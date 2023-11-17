@@ -1,10 +1,11 @@
 {
   "siteName":"GNU.band",
+  "siteDescription": " We are GNU a band from Berlin Germany and this is our Portfolio",
   "domain":"gnu.band",
   "brandSlogan": "GNU the longface band",
   "email":"info@gnu.band",
   "telephone":{
     "prefix":"+49177",
-    "number":"9198964"
+    "number":"081512324"
   }
 }
