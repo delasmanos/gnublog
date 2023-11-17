@@ -29,5 +29,7 @@ export default defineConfig({
       content: [h('span.visually-hidden', ' permalink'), s('span.icon-link-value', ' 🔗')]
     }]]
   },
-  integrations: [mdx(), sitemap(), tailwind({applyBaseStyles: false})]
+  integrations: [mdx(), sitemap(), 
+    tailwind({applyBaseStyles: false})
+  ]
 });

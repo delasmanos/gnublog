@@ -1,11 +1,11 @@
 ---
 import type { HTMLAttributes } from "astro/types";
+import { twMerge } from "tailwind-merge";
 
 type Props = HTMLAttributes<"a"> & { showUnderline?: boolean };
 
 const { href, class: className, showUnderline, ...props } = Astro.props;
 const decorate = typeof showUnderline === "undefined" ? true : showUnderline;
-console.log(decorate, showUnderline);
 const { pathname } = Astro.url;
 const isRoot = href === "/";
 const isSub = !isRoot && pathname.includes(href?.toString() ?? "");
@@ -17,15 +17,15 @@ const isActive =
   href={href}
   style={{ "text-shadow": "2px 2px var(--chili-red)" }}
   class:list={[
-    className,
-    "text-transparent",
+    twMerge(
+      className,
+      // "text-transparent",
+      "hover:text-gnurange-light",
+      "drop-shadow-md",
+    ),
     { "font-bolder ": isActive },
     { "underline underline-offset-4": decorate },
-    { "no-underline": !isActive },
-    { "no-underline": isRoot },
-    // { "text-white": !isRoot },
-    "hover:text-gnurange-light",
-    "drop-shadow-md",
+    { "no-underline": !isActive || isRoot },
   ]}
   {...props}
 >
