@@ -28,7 +28,7 @@ collections:
       - { name: heroImageAltText, label: Hero image alt text }
       - { name: showHeadingPermalink, label: Show Permalinks in headings, widget: "boolean" }
       - { name: showToc, label: Show Table of contents, widget: "boolean" }
-      - { name: author, label: Written by denio,benno,daniel or christoph?,  widget: "string" }
+      - { name: author, label: "Written by denio, benno,daniel or christoph?",  widget: "string" }
       - { name: tags, label: Tags one of "article" "music-production" "coding",  widget: "string" }
       - { name: published, label: Mark as published,  widget: "boolean" }
       - { label: 'Blog post content', name: 'body', widget: 'markdown' }
