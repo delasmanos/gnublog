@@ -1,0 +1,12 @@
+---
+import type { HTMLAttributes } from "astro/types";
+type Props = HTMLAttributes<"h1">;
+const props = Astro.props;
+---
+
+<header>
+  <h1 {...props}><slot /></h1>
+  <p class="doc-subtitle" style={{ marginTop: ".2rem", fontStyle: "italic" }}>
+    <slot name="subTitle" />
+  </p>
+</header>

@@ -15,7 +15,7 @@ type Props = {
 const { pubDate, updatedDate, writtenBy, minutesToRead } = Astro.props;
 ---
 
-<div class="subtitle flex flex-col">
+<div class="subtitle mb-2 flex flex-col">
   <div class="flex">
     <FormattedDate date={pubDate} />
     {
@@ -23,6 +23,13 @@ const { pubDate, updatedDate, writtenBy, minutesToRead } = Astro.props;
         <div class="last-updated-on">
           Last updated on <FormattedDate date={updatedDate} />
         </div>
+      )
+    }
+  </div>
+  <div class="flex flex-row">
+    {
+      minutesToRead && (
+        <ReadingTime readtimeObj={minutesToRead} prefix="Reading time: " />
       )
     }
     <div class="ml-auto flex">
@@ -41,9 +48,4 @@ const { pubDate, updatedDate, writtenBy, minutesToRead } = Astro.props;
       }
     </div>
   </div>
-  {
-    minutesToRead && (
-      <ReadingTime readtimeObj={minutesToRead} prefix="Reading time: " />
-    )
-  }
 </div>
