@@ -18,7 +18,6 @@ const a = Astro.props;
 const postsByAuthor = await getCollection("blog", (entry) =>
   entry.data.author ? entry.data.author.id === a.id : false,
 );
-console.log(postsByAuthor);
 ---
 
 <DocumentLayout>
