@@ -1,0 +1,58 @@
+---
+import type { CSSProperty } from "astro/types";
+import {
+  Image,
+  type LocalImageProps,
+  type RemoteImageProps,
+} from "astro:assets";
+
+export type Props = (LocalImageProps | RemoteImageProps) & {
+  size?: CSSProperty;
+  imagePositon?:
+    | "object-left-top"
+    | "object-top"
+    | "object-right-top"
+    | "object-left"
+    | "object-center"
+    | "object-right"
+    | "object-left-bottom"
+    | "object-bottom"
+    | "object-right-bottom";
+};
+
+const classes = [
+  "object-left-top",
+  "object-top bg",
+  "object-right-top",
+  "object-left ",
+  "object-center",
+  "object-right",
+  "object-left-bottom",
+  "object-bottom",
+  "object-right-bottom",
+];
+
+const { imagePositon, size, ...imageProps } = Astro.props satisfies Props;
+console.log("propop", Astro.props);
+const objectClass = imagePositon
+  ? classes.find((e) => e === imagePositon)
+  : "center";
+const dimension = size ? size : "40rem";
+---
+
+<div
+  id="image-crop"
+  style={{
+    width: dimension,
+    height: dimension,
+  }}
+  class="relative max-w-full overflow-hidden rounded-full object-bottom"
+>
+  <Image
+    {...imageProps}
+    class:list={[
+      "object-none outline-dashed  outline-offset-8 outline-gnutrast-light drop-shadow-xl dark:outline-gnurange-light",
+      objectClass,
+    ]}
+  />
+</div>

@@ -5,6 +5,7 @@ heroImage: "./chaos-rehearsal-2.jpg"
 heroImageAltText: sdsdf
 pubDate: Nov 11 2023
 tags: music-production
+author: delasmanos
 ---
 ## just some good starting points for eqing vocals
 

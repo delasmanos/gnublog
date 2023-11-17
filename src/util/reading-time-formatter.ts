@@ -1,11 +1,7 @@
-type ReadingTime = {
-  text: string;
-  minutes: number;
-  time: number;
-  words: number;
-};
+import type { ReadTimeResults } from "reading-time";
+
 type FormatReadingTimeFnParams = {
-  t: ReadingTime;
+  t: ReadTimeResults;
   prefix?: string;
   suffix?: string;
 };

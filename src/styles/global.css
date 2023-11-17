@@ -6,6 +6,7 @@
 :root {
 	--beaver: hsla(16, 23%, 51%, 1);
 	--gamboge: hsla(35, 79%, 53%, 1);
+	--gamboge-light: hsla(35, 50%, 70%, 1);
 	--chili-red: hsl(16, 100%, 50%, 1);
 	--chili-red-light: hsl(16, 100%, 60%, 1);
 	/* --chili-red: hsla(7, 72%, 53%, 1); */

@@ -1,5 +1,9 @@
 ---
-import BaseHead from "-components/BaseHead.astro";
+import { ViewTransitions } from "astro:transitions";
+import BaseHead from "~components/BaseHead.astro";
+import Footer from "~components/Footer.astro";
+import Header from "~components/Header.astro";
+import { buttonId } from "~components/atoms/ThemeIcon.astro";
 const { title, description } = Astro.props;
 ---
 
@@ -7,8 +11,18 @@ const { title, description } = Astro.props;
 <html lang="de">
   <head>
     <BaseHead title={title} description={description} />
+    <ViewTransitions />
   </head>
-  <body class="h-full">
-    <slot />
+  <body
+    class="h-full bg-gnutrast-light dark:bg-slate-600"
+    transition:animate="none"
+    class="h-full bg-gnutrast-light dark:bg-slate-600"
+    transition:animate="none"
+  >
+    <Header classNames="text-transparent" />
+    <main class="container mx-auto" transition:animate="fade">
+      <slot />
+    </main>
+    <Footer />
   </body>
 </html>
