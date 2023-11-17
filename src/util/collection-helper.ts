@@ -1,4 +1,4 @@
-import { getCollection, type CollectionEntry } from "astro:content";
+import { getCollection, type CollectionEntry, getEntry } from "astro:content";
 type GetPublishedPostFn = (
   sortByDate?: "latest-first" | "latest-last",
   filter?: (entry: CollectionEntry<"blog">) => unknown,
@@ -20,4 +20,9 @@ const defaultFilter: filter = (entry, f) => {
     return baseCondition && f(entry);
   }
   return baseCondition;
+};
+
+export const getSiteSettings = async () => {
+  const s = await getEntry("settings", "site");
+  return s.data;
 };
