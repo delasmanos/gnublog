@@ -10,11 +10,6 @@ import Header from "../components/Header.astro";
 import BlogHeading from "~components/BlogHeading.astro";
 import MdContainer from "~components/MdContainer.astro";
 import pic from "../assets/images/blog-generic-placeholder.jpg";
-import SocialImages from "~components/SocialImages.astro";
-
-const im = await getImage({
-  src: pic,
-});
 
 type Props = CollectionEntry<"blog">["data"] & {
   minutesToRead: ReadTimeResults;
@@ -38,7 +33,7 @@ const {
 <html lang="en">
   <head>
     <BaseHead
-      title={title}
+      title={subTitle ? `${title} - ${subTitle}` : title}
       description={description}
       image={heroImage}
       altText={heroImageAltText}
