@@ -3,6 +3,7 @@ import { Image } from "astro:assets";
 import { getCollection, type CollectionEntry } from "astro:content";
 import DocumentLayout from "layouts/DocumentLayout.astro";
 import BackLink from "~components/BackLink.astro";
+import Link from "~components/Link.astro";
 import { slugify } from "~util/slugify";
 
 export async function getStaticPaths() {
@@ -31,13 +32,13 @@ const postsByAuthor = await getCollection("blog", (entry) =>
         >
           <h2
             style={{ "text-shadow": "4px 4px var(--chili-red)" }}
-            class="mb-0 text-[5rem] font-bold text-white drop-shadow-md hover:text-gnurange-light md:bottom-24 md:text-[6rem] lg:text-[7rem] xl:text-[8rem]"
+            class="mb-0 select-none text-[5rem] font-bold text-white drop-shadow-md hover:text-gnurange-light md:bottom-24 md:text-[6rem] lg:text-[7rem] xl:text-[8rem]"
           >
             {a.data.name}
           </h2>
           <p
             style={{ "text-shadow": "2px 2px var(--chili-red)" }}
-            class="-mt-6 pl-4 text-xl font-extrabold text-white md:-mt-8 lg:pr-4 lg:text-right"
+            class="-mt-6 select-none pl-4 text-xl font-extrabold text-white md:-mt-8 lg:pr-4 lg:text-right"
           >
             {a.data.nickName}
           </p>
@@ -94,7 +95,7 @@ const postsByAuthor = await getCollection("blog", (entry) =>
             <ul class="text-slate-900 dark:text-slate-100">
               {postsByAuthor.map((p) => (
                 <li>
-                  <a href={`/blog/${p.slug}`}> {p.data.title}</a>
+                  <Link href={`/blog/${p.slug}`}> {p.data.title}</Link>
                 </li>
               ))}
             </ul>

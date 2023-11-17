@@ -21,17 +21,17 @@ type Props = CollectionEntry<"band-mates">;
     {
       authors.map((a, i) => (
         <div class="p-8 md:p-6">
-          <div class="mate-card relative transition-all ease-out hover:scale-110">
-            <div class="mate-name absolute bottom-10 z-20 -rotate-12 ">
+          <div class="mate-card group relative transition-all ease-out hover:scale-110">
+            <div class="mate-name group absolute bottom-10 z-20 -rotate-12 ">
               <h2
                 style={{ "text-shadow": "4px 4px var(--chili-red)" }}
-                class="mb-0 text-[5rem] font-bold text-white drop-shadow-md hover:text-gnurange-light md:bottom-24 md:text-[2rem]   lg:text-[3rem] xl:text-[4rem]"
+                class="mb-0 select-none text-[5rem] font-bold text-white drop-shadow-md group-hover:text-gnurange-light md:bottom-24 md:text-[2rem]   lg:text-[3rem] xl:text-[4rem]"
               >
                 {a.data.name}
               </h2>
               <p
                 style={{ "text-shadow": "2px 2px var(--chili-red)" }}
-                class="-mt-4 pr-4 text-right text-xl font-extrabold text-white"
+                class="-mt-4 select-none pr-4 text-right text-xl font-extrabold text-white group-hover:text-left"
               >
                 {a.data.nickName}
               </p>
