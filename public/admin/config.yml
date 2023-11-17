@@ -27,11 +27,11 @@ collections:
       - { name: subTitle, label: Subtitle }
       - { name: description, label: Description }
       - { name: pubDate, label: Date, widget: datetime, date_format: "YYYY-MM-DD" }
-      - { name: heroImage, label: Hero image, widget: image, allow_multiple: false,media_folder: './'  }
+      - { name: heroImage, label: Hero image, widget: image, allow_multiple: false, media_folder: './'  }
       - { name: heroImageAltText, label: Hero image alt text }
-      - { name: showHeadingPermalink, label: Show Permalinks in headings, widget: "boolean" }
-      - { name: showToc, label: Show Table of contents, widget: "boolean" }
-      - { name: published, label: Mark as published,  widget: "boolean" }
+      - { name: showHeadingPermalink, label: Show Permalinks in headings, widget: "boolean" , default: false}
+      - { name: showToc, label: Show Table of contents, widget: "boolean" , default: false}
+      - { name: published, label: Mark as published,  widget: "boolean" , default: false}
       - { label: 'Blog post content', name: 'body', widget: 'markdown' }
       - label: "Author"
         name: "author"
