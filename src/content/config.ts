@@ -51,22 +51,6 @@ const settings = defineCollection({
       prefix: z.string(),
       number: z.string(),
     }),
-    address: z.object({
-      street: z.string(),
-      zip: z.string(),
-    }),
-    officeHours: z.array(
-      z.object({
-        time: z.string(),
-        day: z.string(),
-      }),
-    ),
-    telephoneHours: z.array(
-      z.object({
-        time: z.string(),
-        day: z.string(),
-      }),
-    ),
   }),
 });
 
