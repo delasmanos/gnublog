@@ -4,6 +4,7 @@ import { getCollection } from "astro:content";
 import DocumentLayout from "layouts/DocumentLayout.astro";
 import placeHolderHero from "~assets/images/blog-generic-placeholder.jpg";
 import FormattedDate from "~components/FormattedDate.astro";
+import Link from "~components/Link.astro";
 
 const posts = (await getCollection("blog")).sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
@@ -16,7 +17,7 @@ const posts = (await getCollection("blog")).sort(
       {
         posts.map((post) => (
           <li class="text-slate-800 dark:text-slate-100">
-            <a href={`/blog/${post.slug}/`}>
+            <Link href={`/blog/${post.slug}/`}>
               <Image
                 class="h-[360px] object-cover"
                 width={720}
@@ -28,7 +29,7 @@ const posts = (await getCollection("blog")).sort(
               <p class="date">
                 <FormattedDate date={post.data.pubDate} />
               </p>
-            </a>
+            </Link>
           </li>
         ))
       }
