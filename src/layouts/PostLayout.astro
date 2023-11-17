@@ -9,6 +9,12 @@ import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
 import BlogHeading from "~components/BlogHeading.astro";
 import MdContainer from "~components/MdContainer.astro";
+import pic from "../assets/images/blog-generic-placeholder.jpg";
+import SocialImages from "~components/SocialImages.astro";
+
+const im = await getImage({
+  src: pic,
+});
 
 type Props = CollectionEntry<"blog">["data"] & {
   minutesToRead: ReadTimeResults;
@@ -27,23 +33,16 @@ const {
   writtenBy,
   subTitle,
 } = Astro.props;
-// super dirty astro bug heroimage is not an url so i have to import it to get the path
-// import it again to pass it to getimag to get the url of the optimized image
-let ogurl = "";
-let src = "";
-try {
-  if (heroImage && import.meta.env.PROD) {
-    ogurl = Astro.site?.origin + (await getImage(heroImage)).src;
-    console.log("????????", ogurl);
-  }
-} catch (e) {
-  console.log(e);
-}
 ---
 
 <html lang="en">
   <head>
-    <BaseHead title={title} description={description} />
+    <BaseHead
+      title={title}
+      description={description}
+      image={heroImage}
+      altText={heroImageAltText}
+    />
     <ViewTransitions />
     <style>
       :global(.toc-details-collapse, .toc-details-collapse li) {
@@ -53,11 +52,7 @@ try {
         padding: 0.5rem;
       }
     </style>
-    {ogurl && <meta property="og:image" content={ogurl} />}
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
   </head>
-
   <body
     class="h-full bg-gnutrast-light dark:bg-slate-600"
     transition:animate="none"
@@ -66,10 +61,7 @@ try {
     <main
       transition:animate="slide"
       transition:name="content"
-      class:list={[
-        // { "no-permalink": !showHeadingPermalink },
-        "container mx-auto ",
-      ]}
+      class:list={["container mx-auto "]}
     >
       <MdContainer
         showHeadingPermalink={showHeadingPermalink}
