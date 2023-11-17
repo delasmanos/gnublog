@@ -2,7 +2,7 @@
 import { Image } from "astro:assets";
 import { getCollection, type CollectionEntry } from "astro:content";
 import DocumentLayout from "layouts/DocumentLayout.astro";
-import Avatar from "~components/Avatar.astro";
+import BackLink from "~components/BackLink.astro";
 import { slugify } from "~util/slugify";
 
 export async function getStaticPaths() {
@@ -15,109 +15,93 @@ export async function getStaticPaths() {
 type Props = CollectionEntry<"band-mates">;
 
 const a = Astro.props;
+const postsByAuthor = await getCollection("blog", (entry) =>
+  entry.data.author ? entry.data.author.id === a.id : false,
+);
+console.log(postsByAuthor);
 ---
 
 <DocumentLayout>
-  {
-    a ? (
-      <div class="flex justify-center">
-        <div class="px-16 py-20  md:px-6">
-          <div class="mate-card relative">
-            <div
-              class="mate-name absolute bottom-10 z-20 -rotate-12"
-              transition:name="band-mate-avatar"
-            >
-              <h2
-                style={{ "text-shadow": "4px 4px var(--chili-red)" }}
-                class="mb-0 text-[5rem] font-bold text-white drop-shadow-md hover:text-gnurange-light md:bottom-24 md:text-[6rem] lg:text-[7rem] xl:text-[8rem]"
-              >
-                {a.data.name}
-              </h2>
-              <p
-                style={{ "text-shadow": "2px 2px var(--chili-red)" }}
-                class="-mt-6 pl-4 text-xl font-extrabold text-white md:-mt-8 lg:pr-4 lg:text-right"
-              >
-                {a.data.nickName}
-              </p>
-            </div>
+  <div class="flex justify-center">
+    <div class="px-16 py-20 md:px-6">
+      <div class="mate-card relative">
+        <div
+          class="mate-name absolute bottom-10 z-20 -rotate-12"
+          transition:name="band-mate-avatar"
+          transition:animate="initial"
+        >
+          <h2
+            style={{ "text-shadow": "4px 4px var(--chili-red)" }}
+            class="mb-0 text-[5rem] font-bold text-white drop-shadow-md hover:text-gnurange-light md:bottom-24 md:text-[6rem] lg:text-[7rem] xl:text-[8rem]"
+          >
+            {a.data.name}
+          </h2>
+          <p
+            style={{ "text-shadow": "2px 2px var(--chili-red)" }}
+            class="-mt-6 pl-4 text-xl font-extrabold text-white md:-mt-8 lg:pr-4 lg:text-right"
+          >
+            {a.data.nickName}
+          </p>
+        </div>
 
-            <div
-              id="image-crop"
-              class="relative max-w-full overflow-hidden rounded-full object-bottom outline-dashed outline-offset-8 outline-white dark:outline-gnurange"
-            >
-              <Image
-                class="h-[22rem] w-[22rem] object-none object-center  outline-dashed outline-offset-8 outline-gnutrast-light drop-shadow-xl dark:outline-gnurange-light md:h-[28rem] md:w-[28rem] lg:h-[32rem] lg:w-[32rem] "
-                src={a.data.avatar}
-                alt={a.data.name}
-              />
-            </div>
-          </div>
-          <div class="info mt-4 flex items-start">
-            <dl class="flex flex-col text-slate-600 drop-shadow-md dark:text-white">
-              <div class="flex flex-row">
-                <dt class="text-2xl font-bold">Member since:</dt>
-                <dd class="pl-2 text-2xl font-bold text-white">
-                  {a.data.memberSince}
-                </dd>
-              </div>
-              <>
-                <div class="flex flex-row">
-                  <dt class="text-2xl font-bold">Postion:</dt>
-                  <dd class="pl-2 text-2xl font-bold text-white">
-                    {a.data.postion}
-                  </dd>
-                </div>
-                <div class="flex flex-row">
-                  <dt class="text-2xl font-bold">Nickname:</dt>
-                  <dd class="pl-2 text-2xl font-bold text-white">
-                    {a.data.nickName}
-                  </dd>
-                </div>
-              </>
-            </dl>
-            <button
-              transition:persist
-              data-role="backlink"
-              class="ml-auto flex h-16 w-16 items-center justify-center rounded-full bg-gnurange text-white"
-            >
-              back
-            </button>
-          </div>
-          <div class=" text-white">
-            <h2 class="mt-4 text-2xl">About me</h2>
-            <p>{a.data.aboutMe}</p>
-          </div>
+        <div
+          id="image-crop"
+          class="relative max-w-full overflow-hidden rounded-full object-bottom outline-dashed outline-offset-8 outline-white dark:outline-gnurange"
+        >
+          <Image
+            class="h-[22rem] w-[22rem] object-none object-center outline-dashed outline-offset-8 outline-gnutrast-light drop-shadow-xl dark:outline-gnurange-light md:h-[28rem] md:w-[28rem] lg:h-[32rem] lg:w-[32rem]"
+            src={a.data.avatar}
+            alt={a.data.name}
+          />
         </div>
       </div>
-    ) : (
-      "afdsdfjsadjfghjuif"
-    )
-  }
+      <div class="info mt-4 flex items-start">
+        <dl class="flex flex-col text-slate-600 drop-shadow-md dark:text-white">
+          <div class="flex flex-row">
+            <dt class="text-2xl font-bold">Member since:</dt>
+            <dd class="pl-2 text-2xl font-bold text-white">
+              {a.data.memberSince}
+            </dd>
+          </div>
+          <>
+            <div class="flex flex-row">
+              <dt class="text-2xl font-bold">Postion:</dt>
+              <dd class="pl-2 text-2xl font-bold text-white">
+                {a.data.postion}
+              </dd>
+            </div>
+            <div class="flex flex-row">
+              <dt class="text-2xl font-bold">Nickname:</dt>
+              <dd class="pl-2 text-2xl font-bold text-white">
+                {a.data.nickName}
+              </dd>
+            </div>
+          </>
+        </dl>
+        <BackLink
+          class="ml-auto flex h-16 w-16 items-center justify-center rounded-full bg-gnurange text-white"
+        >
+          back
+        </BackLink>
+      </div>
+      <div class="text-white">
+        <h2 class="mt-4 text-2xl">About me</h2>
+        <p>{a.data.aboutMe}</p>
+      </div>
+      {
+        postsByAuthor.length > 0 && (
+          <div class="prose dark:prose-invert">
+            <h2 class="mt-4 text-2xl font-bold text-gnurange">Posts by me: </h2>
+            <ul class="text-slate-900 dark:text-slate-100">
+              {postsByAuthor.map((p) => (
+                <li>
+                  <a href={`/blog/${p.slug}`}> {p.data.title}</a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )
+      }
+    </div>
+  </div>
 </DocumentLayout>
-<script>
-  const setup = () => {
-    const element: HTMLButtonElement | null = document.querySelector(
-      '[data-role="backlink"]',
-    );
-
-    // Provide a standard href to facilitate standard browser features such as
-    //  - Hover to see link
-    //  - Right click and copy link
-    //  - Right click and open in new tab
-    if (element) {
-      element?.setAttribute("href", document.referrer);
-      element?.setAttribute("title", document.referrer);
-      // We can't let the browser use the above href for navigation. If it does,
-      // the browser will think that it is a regular link, and place the current
-      // page on the browser history, so that if the user clicks "back" again,
-      // it'll actually return to this page. We need to perform a native back to
-      // integrate properly into the browser's history behavior
-      element.onclick = function () {
-        console.log("asfpkijadiojasiodj");
-        history.back();
-        return false;
-      };
-    }
-  };
-  document.addEventListener("astro:after-swap", setup);
-</script>

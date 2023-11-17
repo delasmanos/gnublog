@@ -7,7 +7,8 @@ export default {
 			colors: {
 				// gnurange: "var(--chili-red)",
 				gnutrast:{ DEFAULT: "var(--blue-munsell)", light: "var(--blue-munsell-light)"},
-				gnurange:{ DEFAULT: "var(--chili-red)", light: "var(--chili-red-light)"}
+				gnurange:{ DEFAULT: "var(--chili-red)", light: "var(--chili-red-light)"},
+				gnuyellow:{ DEFAULT: "var(--gamboge)", light: "var(--gamboge-light)"}
 				// gnurange: "hsla(7, 72%, 53%, 1)"
 			}
 		},
