@@ -20,6 +20,7 @@ if (
   import.meta.env.PROD
 ) {
   try {
+    //whatsapp only accepts jpg and png images with min 300px
     socialImage = await getImage({
       src: importedImage.src,
       width: 300,
