@@ -1,5 +1,6 @@
 ---
-title: "I can't hear myself - soft rules for a good rehearsal"
+title: "I can't hear myself"
+subTitle: "soft rules for a good rehearsal"
 description: "A good rehearsal needs some soft rules to be fun. This is a list of rules which helped us."
 heroImage: "./chaos-rehearsal-3.jpg"
 heroImageAltText: sdsdf

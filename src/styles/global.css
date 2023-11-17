@@ -14,6 +14,7 @@
 	/* --blue-munsell: rgb(59, 131, 145); */
 	--blue-munsell: hsl(190, 42%, 40%);
 	--blue-munsell-light: hsl(190, 50%, 60%);
+	--dark-blue: hsl(220.43, 44.23%, 20.39%);
 	/* --gnurange: "#ff4400" */
 }
 .visually-hidden {
