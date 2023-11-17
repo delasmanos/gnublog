@@ -1,0 +1,80 @@
+---
+import { Image } from "astro:assets";
+import { getCollection, type CollectionEntry } from "astro:content";
+import { fade, slide } from "astro:transitions";
+import DocumentLayout from "layouts/DocumentLayout.astro";
+import { slugify } from "~util/slugify";
+
+const authors = (await getCollection("band-mates")).sort((a, b) =>
+  a.data.name.localeCompare(b.data.name),
+);
+type Props = CollectionEntry<"band-mates">;
+---
+
+<DocumentLayout>
+  <div
+    class="flex h-full flex-col items-center justify-center pt-20 md:h-screen md:flex-row"
+    transition:name="band-mate-avatar"
+    transition:animate={fade({ duration: "0.4s" })}
+  >
+    {
+      authors.map((a, i) => (
+        <div class="p-8 md:p-6">
+          <div class="mate-card relative transition-all ease-out hover:scale-110">
+            <div class="mate-name absolute bottom-10 z-20 -rotate-12 ">
+              <h2
+                style={{ "text-shadow": "4px 4px var(--chili-red)" }}
+                class="mb-0 text-[5rem] font-bold text-white drop-shadow-md hover:text-gnurange-light md:bottom-24 md:text-[2rem]   lg:text-[3rem] xl:text-[4rem]"
+              >
+                {a.data.name}
+              </h2>
+              <p
+                style={{ "text-shadow": "2px 2px var(--chili-red)" }}
+                class="-mt-4 pr-4 text-right text-xl font-extrabold text-white"
+              >
+                {a.data.nickName}
+              </p>
+            </div>
+            <a
+              transition:persist
+              data-card={slugify(a.data.name)}
+              href={`/band-mates/${slugify(a.data.name)}`}
+            >
+              <Image
+                class="rounded-full object-cover outline-dashed outline-offset-8 outline-white drop-shadow-xl dark:outline-gnurange-light"
+                src={a.data.avatar}
+                alt={a.data.name}
+              />
+            </a>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</DocumentLayout>
+<script>
+  const setup = () => {
+    const cards: NodeListOf<HTMLLinkElement> =
+      document.querySelectorAll("[data-card]");
+    const sounds = {
+      benno: new Audio("/audio/benno.m4a"),
+      christoph: new Audio("/audio/christoph.m4a"),
+      daniel: new Audio("/audio/daniel.m4a"),
+      denio: new Audio("/audio/denio.m4a"),
+    };
+    cards.forEach((e) => {
+      const who = e.dataset.card as keyof typeof sounds;
+      console.log(who, e);
+      e.addEventListener("mouseover", () => {
+        function fade(arg0: {
+          delay: number;
+        }): import("astro").TransitionAnimationValue | undefined {
+          throw new Error("Function not implemented.");
+        }
+        sounds[who].play();
+      });
+    });
+  };
+  document.addEventListener("astro:after-swap", setup);
+  // document.addEventListener("astro:page-load", setup);
+</script>
