@@ -1,0 +1,29 @@
+---
+import ContactForm from "~components/contact-form/ContactForm.astro";
+import DocumentLayout from "~layouts/DocumentLayout.astro";
+export const getStaticPaths = async () => {
+  return [{ params: { path: undefined } }, { params: { path: "success" } }];
+};
+const { path } = Astro.params;
+const showSuccess = path;
+---
+
+<DocumentLayout title="Contact" description="Please contact us">
+  <div class="flex w-full max-w-2xl flex-col px-4 md:px-0">
+    {
+      showSuccess ? (
+        <h1
+          style={{
+            "text-shadow": "4px 2px var(--chili-red)",
+            // "-webkit-text-stroke": "1px var(--chili-red)",
+          }}
+          class="text-center font-extrabold uppercase text-white drop-shadow-md sm:text-4xl"
+        >
+          Thank you for getting in touch with us!
+        </h1>
+      ) : (
+        <ContactForm title="Contact" />
+      )
+    }
+  </div>
+</DocumentLayout>

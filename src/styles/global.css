@@ -1,7 +1,7 @@
 /* The integration's default injected base.css file */
 @tailwind base;
 @tailwind components;
-@tailwind utilities; 
+@tailwind utilities;
 
 :root {
 	--beaver: hsla(16, 23%, 51%, 1);
@@ -17,8 +17,15 @@
 	--dark-blue: hsl(220.43, 44.23%, 20.39%);
 
 	--bg-light: hsl(190.59, 49.51%, 80%)
-	/* --gnurange: "#ff4400" */
+		/* --gnurange: "#ff4400" */
+		--gnu-text: 2px 2px var(--chili-red);
+
 }
+
+.gnutext {
+	text-shadow: 2px var(--chili-red);
+}
+
 .visually-hidden {
 	/* See: https://github.com/twbs/bootstrap/blob/master/scss/mixins/_screen-reader.scss */
 	position: absolute;
@@ -40,9 +47,10 @@
 		font-weight: 700;
 		text-shadow: .1em 0.1em var(--chili-red);
 	}
+
 	.bg-radial {
 		background: rgb(51, 65, 85);
-			background: linear-gradient(180deg, rgba(51, 65, 85, 1) 0%, rgba(119, 119, 212, 1) 98%, rgba(119, 119, 212, 1) 100%);
+		background: linear-gradient(180deg, rgba(51, 65, 85, 1) 0%, rgba(119, 119, 212, 1) 98%, rgba(119, 119, 212, 1) 100%);
 
 		/* background: rgb(119, 119, 212);
 		background: radial-gradient(circle, rgba(119, 119, 212, 1) 1%, rgba(51, 65, 85, 1) 100%); */

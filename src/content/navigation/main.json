@@ -14,5 +14,9 @@
   {
     "displayName":"merch",
     "path":"/merch"
+  },
+  {
+    "displayName":"contact",
+    "path":"/contact"
   }
 ]

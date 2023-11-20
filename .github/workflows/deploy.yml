@@ -24,6 +24,7 @@ jobs:
         uses: withastro/action@v1
         env:
           PUBLIC_BASE_PATH: /gnublog
+          WEB3FORMS_ACCESS_KEY: ${{ secrets.WEB3FORMS_ACCESS_KEY }}
           # Setting an environment variable with the value of a configuration variable
         #  ${{ vars.PUBLIC_BASE_PATH }}
         # with:

@@ -1,0 +1,76 @@
+---
+import clsx from "clsx";
+
+type Props = { title: string };
+const { title } = Astro.props;
+const formAction = "https://api.web3forms.com/submit";
+const accessKey = import.meta.env.WEB3FORMS_ACCESS_KEY;
+
+export const inputClasses =
+  "block w-full rounded-md shadow-md placeholder-slate-500 p-4 caret-teal-500 invalid:outline-red-500";
+
+const successUrl = new URL(Astro.url.pathname + "/success", Astro.url);
+---
+
+<h1
+  style={{
+    "text-shadow": "4px 2px var(--chili-red)",
+    // "-webkit-text-stroke": "1px var(--chili-red)",
+  }}
+  class="font-extrabold uppercase text-white drop-shadow-md sm:text-4xl"
+>
+  {title}
+</h1>
+<div class="relative flow-root w-full text-2xl">
+  <form
+    action={formAction}
+    id="gnu-contact-form"
+    class="flex flex-col space-y-4"
+    method="POST"
+  >
+    <input type="hidden" value={accessKey} name="access_key" />
+    <input type="hidden" name="redirect" value={successUrl.href} />
+    <input type="hidden" value="GNU contact form" name="from_name" />
+
+    <input type="checkbox" name="botcheck" class="visually-hidden" />
+    <input
+      class={inputClasses}
+      type="text"
+      placeholder="Name"
+      aria-label="Name"
+      name="name"
+      required
+      aria-required="true"
+    />
+    <input
+      class={inputClasses}
+      type="email"
+      placeholder="Email"
+      aria-label="Email"
+      name="email"
+      required
+      aria-required="true"
+    />
+    <textarea
+      class={clsx("h-60 ", inputClasses)}
+      placeholder="Message"
+      aria-label="Message"
+      name="message"
+      required
+      aria-required="true"
+      minlength="10"
+      data-error-minlength="Please write a short message, so we know what you want to tell us ;)"
+    ></textarea>
+    <div class="flex flex-row justify-end">
+      <button
+        class={clsx(
+          "rounded-md bg-gnurange dark:bg-gnutrast-light p-4 text-2xl font-black uppercase text-white ",
+        )}
+        type="submit"
+      >
+        Submit
+      </button>
+    </div>
+  </form>
+</div>
+<script></script>
