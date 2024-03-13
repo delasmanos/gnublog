@@ -11,7 +11,7 @@ export default {
 				gnuyellow:{ DEFAULT: "var(--gamboge)", light: "var(--gamboge-light)"},
 				gnudark: { DEFAULT: "var(--dark-blue)"},
 				"gnu-bg": { DEFAULT: "var(--bg-light)"},
-			}
+			},
 		},
 	},
 	plugins: [

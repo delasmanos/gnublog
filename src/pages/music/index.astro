@@ -1,0 +1,54 @@
+---
+import { musicSymbolist } from "~util/music-theory/musicSymbolsList.ts";
+import DocumentLayout from "layouts/DocumentLayout.astro";
+import MusicSymbol from "~components/MusicSymbol.astro";
+import { BpmList } from "~components/react/BpmList";
+
+const cellClasses = "border border-slate-300 text-left p-2";
+---
+
+<DocumentLayout title="music theory" description="A list of notes">
+  <div class="flex flex-col rounded-md bg-white p-4">
+    <BpmList client:load />
+    <div class="bar">
+      <MusicSymbol
+        class:list={["text-4xl text-gnurange"]}
+        symbolName="single_barline"
+      />
+       Am C F e <MusicSymbol
+        class:list={["text-4xl text-gnurange"]}
+        symbolName="single_barline"
+      />
+    </div>
+    <table
+      tabindex="0"
+      class="table-auto border-collapse border border-slate-400"
+    >
+      <thead>
+        <tr class="bg-gnutrast-light">
+          <th class:list={[cellClasses]}>Name</th>
+          <th class={cellClasses}>Symbol</th>
+          <th class={cellClasses}>Unicode hex</th>
+          <th class={cellClasses}>HTML code</th>
+        </tr>
+      </thead>
+      <tbody>
+        {
+          Object.values(musicSymbolist).map((value: MusicSymbol) => (
+            <tr tabindex="0" class="odd:bg-gray-100 ">
+              <td class:list={[cellClasses]}>{value.name}</td>
+              <td class:list={[cellClasses, "text-center"]}>
+                <span
+                  class="text-4xl text-gnurange"
+                  set:html={value.htmlDecCode}
+                />
+              </td>
+              <td class={cellClasses}>{value.unicodeHex}</td>
+              <td class={cellClasses}>{value.htmlDecCode}</td>
+            </tr>
+          ))
+        }
+      </tbody>
+    </table>
+  </div>
+</DocumentLayout>

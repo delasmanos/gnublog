@@ -1,0 +1,88 @@
+---
+import type { GetStaticPaths, Page } from "astro";
+import { getCollection, type CollectionEntry } from "astro:content";
+import PostTeaserCard from "~components/PostTeaserCard.astro";
+// import Pagination from "~components/molecules/Pagination.astro";
+import DocumentLayout from "~layouts/DocumentLayout.astro";
+import Pg from "@philnash/astro-pagination";
+
+export const getStaticPaths: GetStaticPaths = async ({ paginate }) => {
+  const astronautPages = await getCollection("blog");
+  // Generate pages from our array of astronauts, with 2 to a page
+  return paginate(astronautPages, { pageSize: 5 });
+};
+type Props = { page: Page<CollectionEntry<"blog">> };
+
+// All paginated data is passed on the "page" prop
+const { page } = Astro.props;
+const pathname = new URL(Astro.request.url).pathname.split("/");
+
+const firstPath = pathname[1];
+// console.log(page, Astro.params);
+---
+
+<DocumentLayout title="Posts" description="A list of all blog posts">
+  <section
+    class="mx-auto flex h-full w-full max-w-4xl flex-col items-center justify-center px-2 pt-20 md:px-4"
+  >
+    <!--Display the current page number. Astro.params.page can also be used!-->
+    <!-- <Pagination
+      currentPage={page.currentPage}
+      firstPage={firstPath}
+      lastPage={`/${firstPath}/${page.lastPage}`}
+      nextPage={page.url.next}
+      previousPage={page.url.prev}
+      totalPages={page.lastPage}
+    /> -->
+    <div
+      class="pagination font-mono text-2xl font-bold text-slate-800 dark:text-slate-100"
+    >
+      <Pg
+        page={page}
+        urlPattern="/test/{}"
+        showPrevNext={true}
+        showFirstLast={true}
+      />
+    </div>
+    <ul class="flex w-full flex-wrap">
+      {
+        page.data.map(async (d) => (
+          <li class="w-full">
+            <PostTeaserCard post={d} />
+          </li>
+        ))
+      }
+    </ul>
+    <!-- <Pagination
+      currentPage={page.currentPage}
+      firstPage={"/"}
+      lastPage={`/${firstPath}/${page.lastPage}`}
+      nextPage={page.url.next}
+      previousPage={page.url.prev}
+      totalPages={page.lastPage}
+    /> -->
+    <div class="pagination">
+      <Pg page={page} urlPattern="/test/{}" />
+    </div>
+  </section>
+  <style>
+    :global(nav[role="navigation"]) {
+      /* :global(li:nth-child(3)) {
+      font-size: 20rem;
+    } */
+      & > :global(ul) {
+        @apply gap-4;
+        display: flex;
+        flex-direction: row;
+        align-items: baseline;
+        & > :global(li) {
+          border: none;
+          & :global(em[aria-current="page"]) {
+            color: var(--chili-red);
+            @apply text-4xl;
+          }
+        }
+      }
+    }
+  </style>
+</DocumentLayout>

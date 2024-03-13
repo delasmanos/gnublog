@@ -1,8 +1,10 @@
 ---
 import { Image } from "astro:assets";
 import { getCollection, type CollectionEntry } from "astro:content";
+import { prefetch } from "astro:prefetch";
 import DocumentLayout from "layouts/DocumentLayout.astro";
 import BackLink from "~components/BackLink.astro";
+import FormattedDate from "~components/FormattedDate.astro";
 import MdContainer from "~components/MdContainer.astro";
 import PostList from "~components/PostList.astro";
 import Separator from "~components/Separator.astro";
@@ -23,6 +25,7 @@ const { Content } = await a.render();
 const postsByAuthor = await getPublishedPosts("latest-first", (entry) =>
   entry.data.author ? entry.data.author.slug === a.slug : false,
 );
+console.log(typeof a.data.memberSince);
 ---
 
 <DocumentLayout
@@ -82,7 +85,13 @@ const postsByAuthor = await getPublishedPosts("latest-first", (entry) =>
           <div class="flex flex-row">
             <dt class="font-bold">Member since:</dt>
             <dd class="pl-2 font-bold text-white">
-              {a.data.memberSince}
+              {
+                typeof a.data.memberSince === "string"
+                  ? a.data.memberSince
+                  : a.data.memberSince && (
+                      <FormattedDate date={a.data.memberSince} />
+                    )
+              }
             </dd>
           </div>
           <>

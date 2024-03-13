@@ -6,5 +6,6 @@ export const bandMateSchema = ({ image }: SchemaContext) =>
     nickName: z.string(),
     postion: z.string(),
     avatar: image(),
-    memberSince: z.union([z.coerce.date(), z.string()]).optional(),
+    memberSince: z.string().or(z.coerce.date()).optional(),
+    // memberSince: z.union([z.coerce.date(), z.string()]).optional(),
   });

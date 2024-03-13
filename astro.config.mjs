@@ -8,13 +8,15 @@ import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import { h, s } from 'hastscript';
 import { collapsibleToc } from "./src/server/remark-plugins/astro-collapsible-toc.mjs";
 import tailwind from "@astrojs/tailwind";
-import {loadEnv} from "vite"
-import { PERMALINK_CLASSNAME, TOC_DETAILS_CLASSNAME } from "./src/server/remark-plugins/consts"
-
-const { PUBLIC_BASE_PATH } = loadEnv(process.env.PUBLIC_BASE_PATH, process.cwd(),"");
-console.log('astro.config basepath: ',PUBLIC_BASE_PATH);
-
+import { loadEnv } from "vite";
+import { PERMALINK_CLASSNAME, TOC_DETAILS_CLASSNAME } from "./src/server/remark-plugins/consts";
+import react from "@astrojs/react";
+const {
+  PUBLIC_BASE_PATH
+} = loadEnv(process.env.PUBLIC_BASE_PATH, process.cwd(), "");
+console.log('astro.config basepath: ', PUBLIC_BASE_PATH);
 const summaryFn = str => `Open ${str}`;
+
 
 // https://astro.build/config
 export default defineConfig({
@@ -35,7 +37,7 @@ export default defineConfig({
       content: [h('span.visually-hidden', ' permalink'), s('span.icon-link-value', ' 🔗')]
     }]]
   },
-  integrations: [mdx(), sitemap(), 
-    tailwind({applyBaseStyles: false})
-  ]
+  integrations: [mdx(), sitemap(), tailwind({
+    applyBaseStyles: false
+  }), react()]
 });

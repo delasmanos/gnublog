@@ -4,13 +4,25 @@
   "compilerOptions": {
     "strictNullChecks": true,
     "allowJs": true,
-    "baseUrl": "./src",
+    "baseUrl": "/opt/gnuband/src",
     "paths": {
-      "~util/*": [ "util/*"],
-      "~components/*": [ "components/*"],
-      "~content/*": [ "content/*"],
-      "~assets/*": [ "assets/*"],
-      "~layouts/*": [ "layouts/*"]
-    }
+      "~util/*": [
+        "util/*"
+      ],
+      "~components/*": [
+        "components/*"
+      ],
+      "~content/*": [
+        "content/*"
+      ],
+      "~assets/*": [
+        "assets/*"
+      ],
+      "~layouts/*": [
+        "layouts/*"
+      ]
+    },
+    "jsx": "react-jsx",
+    "jsxImportSource": "react"
   }
 }

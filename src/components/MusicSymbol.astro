@@ -1,0 +1,13 @@
+---
+import type { HTMLAttributes } from "astro/types";
+import {
+  musicSymbolist,
+  type Keys,
+} from "~util/music-theory/musicSymbolsList.ts";
+type Props = HTMLAttributes<"span"> & {
+  symbolName: Keys;
+};
+const { symbolName, ...rest } = Astro.props;
+---
+
+<span {...rest} set:html={musicSymbolist[symbolName].htmlDecCode} />

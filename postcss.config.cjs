@@ -22,6 +22,6 @@ module.exports = {
 
     // require('autoprefixer'),
     // require('postcss-csso'),
-     isProd && require('cssnano'),
+    //  isProd && require('cssnano'),
   ],
 };
